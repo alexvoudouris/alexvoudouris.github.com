@@ -1,7 +1,3 @@
-*{
-  font-family: "monospace";
-}
-
 ul#navigation li.external:hover .fa, ul#navigation li.currentmenu .fa{
 	color: #ed9c2c;
 }
