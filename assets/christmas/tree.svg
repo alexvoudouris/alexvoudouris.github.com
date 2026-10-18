@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" role="img" aria-labelledby="title">
+  <title id="title">A Christmas tree with softly twinkling lights</title>
+  <defs>
+    <linearGradient id="fir" x2="1" y2="1"><stop stop-color="#548666"/><stop offset=".5" stop-color="#28674c"/><stop offset="1" stop-color="#174c38"/></linearGradient>
+    <linearGradient id="top" x2="1" y2="1"><stop stop-color="#73a17a"/><stop offset="1" stop-color="#2c7152"/></linearGradient>
+    <radialGradient id="glow"><stop stop-color="#ffe6a1" stop-opacity=".45"/><stop offset="1" stop-color="#ffe6a1" stop-opacity="0"/></radialGradient>
+    <linearGradient id="pot" x2="1" y2="0"><stop stop-color="#713c37"/><stop offset=".5" stop-color="#aa6250"/><stop offset="1" stop-color="#713c37"/></linearGradient>
+  </defs>
+  <style>
+    .tree { transform-origin: 100px 198px; animation: fir-sway 7s ease-in-out infinite; }
+    .star-glow { transform-origin: 100px 24px; animation: star-glimmer 4.5s ease-in-out infinite; }
+    .light { animation: light-glimmer 3.8s ease-in-out infinite alternate; }
+    .second { animation-delay: -1.4s; }
+    .third { animation-delay: -2.6s; }
+    @keyframes fir-sway { 0%,100% { transform: rotate(-.8deg); } 50% { transform: rotate(.8deg); } }
+    @keyframes star-glimmer { 0%,100% { opacity: .55; transform: scale(.9); } 50% { opacity: 1; transform: scale(1.1); } }
+    @keyframes light-glimmer { from { opacity: .45; } to { opacity: 1; } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+  <ellipse cx="100" cy="225" rx="87" ry="13" fill="url(#glow)"/>
+  <ellipse cx="100" cy="224" rx="65" ry="4" fill="#07140e" opacity=".4"/>
+  <path d="M86 188h28v29H86Z" fill="#8b6441"/>
+  <path d="M77 204h46l-5 20H82Z" fill="url(#pot)" stroke="#bd9770" stroke-width="1.3"/>
+  <path d="M75 204h50v5H75Z" fill="#b28b60"/>
+  <g class="tree">
+    <path d="M100 86c-14 24-36 52-67 78l18-1-18 26c43 8 91 8 134 0l-18-26 18 1c-31-26-53-54-67-78Z" fill="url(#fir)" stroke="#306248" stroke-width="1.2"/>
+    <path d="M100 61c-12 22-27 42-47 64l15-1-12 21c29 8 59 8 88 0l-12-21 15 1c-20-22-35-42-47-64Z" fill="url(#fir)" stroke="#518367" stroke-width="1.1"/>
+    <path d="M100 35C91 53 80 70 64 89l12-1-9 16q33 10 66 0l-9-16 12 1c-16-19-27-36-36-54Z" fill="url(#top)" stroke="#779a75" stroke-width="1.1"/>
+    <path d="m83 73-8 13 9-1m-18 38 10-1-9 14m-16 27 9-1-11 19m72-91 5 9m7 28 4 7m13 37 5 9" fill="none" stroke="#d9e6ca" stroke-opacity=".55" stroke-width="2" stroke-linecap="round"/>
+    <path d="M77 94q20 16 48 12m-57 24q29 25 69 18m-83 22q42 28 93 14" fill="none" stroke="#d9bd77" stroke-width="2" stroke-linecap="round"/>
+    <g fill="#aa4b47" stroke="#e4a18a" stroke-width=".6"><circle cx="79" cy="119" r="6"/><circle cx="125" cy="150" r="6.5"/><circle cx="96" cy="181" r="5.5"/></g>
+    <g fill="#e5bc62" stroke="#f9e6ab" stroke-width=".6"><circle cx="102" cy="88" r="5"/><circle cx="65" cy="171" r="5.5"/><circle cx="116" cy="124" r="4.5"/></g>
+    <circle cx="118" cy="85" r="4" fill="#8eafbb" stroke="#d2e2dc" stroke-width=".6"/>
+    <path d="m77 117 1-1m45 32 1-1m-61 20 1-1m36-82 1-1" stroke="#fff3d4" stroke-width="1.7" stroke-linecap="round"/>
+    <g fill="#ffe5a1"><circle class="light" cx="82" cy="101" r="2.2"/><circle class="light second" cx="112" cy="109" r="2"/><circle class="light third" cx="77" cy="141" r="2.3"/><circle class="light" cx="110" cy="151" r="2"/><circle class="light second" cx="60" cy="179" r="2"/><circle class="light third" cx="128" cy="186" r="2.3"/><circle class="light" cx="95" cy="62" r="1.7"/></g>
+    <circle class="star-glow" cx="100" cy="24" r="28" fill="url(#glow)"/>
+    <path d="m100 7 4.5 11.5 12.5.5-9.7 8 3.3 12-10.6-7-10.6 7 3.3-12-9.7-8 12.5-.5Z" fill="#f5d890" stroke="#fff0bd" stroke-width="1.1"/>
+    <path d="m100 10 1 12 12-2-11 5 7 10-9-8-9 8 6-11-11-4 12 2Z" fill="#fff1bd" opacity=".5"/>
+  </g>
+  <g stroke="#c9ae77" stroke-width="1">
+    <path d="M40 203h28v20H40Z" fill="#884b49"/><path d="M37 199h34v7H37Z" fill="#ac6155"/>
+    <path d="M52 200h5v23h-5Z" fill="#ddc48d"/>
+    <path d="M131 207h27v17h-27Z" fill="#c8b47b"/><path d="M128 203h33v7h-33Z" fill="#e1ce9e"/>
+    <path d="M142 204h5v20h-5Z" fill="#9d514b"/>
+    <path d="M54 199c-16-12-14 5 0 0 13-16 17 3 0 0m91 4c-13-11-15 3 0 0 12-13 15 2 0 0" fill="none" stroke-width="2"/>
+  </g>
+</svg>
