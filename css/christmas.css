@@ -1,0 +1,58 @@
+/* Evergreen, candlelight, and a little festive red. Shared layout is in seasons.css. */
+html[data-theme="christmas"] { --season-focus: #e8ca84; }
+html[data-theme="christmas"] body { background: #0f1d19; color: #e0e7de; }
+html[data-theme="christmas"] body::before { background: radial-gradient(ellipse at 100% 0%, rgba(127, 151, 106, .13), transparent 55%), radial-gradient(ellipse at 20% 100%, rgba(177, 115, 52, .07), transparent 50%); }
+html[data-theme="christmas"] #sidebar { background: linear-gradient(155deg, #20362b 0%, #11251e 55%, #18271e 100%); border-color: #3e5140; }
+html[data-theme="christmas"] #sidebar-wrapper { scrollbar-color: #778263 transparent; }
+html[data-theme="christmas"] #profile #profile-photo { border-color: #c3a46a; outline-color: rgba(221, 197, 143, .06); box-shadow: 0 0 32px rgba(201, 172, 106, .12); object-position: center 35%; }
+html[data-theme="christmas"] #profile .title h2 { color: #f5edda; }
+html[data-theme="christmas"] #profile .title h3 { color: #c4d3c2; }
+html[data-theme="christmas"] .seasonal-tagline { color: #d7c697; }
+html[data-theme="christmas"] .season-picker-label { color: #b9c8b5; }
+html[data-theme="christmas"] .season-picker { background: #203b2e; border-color: #677452; color: #f4e8c8; }
+html[data-theme="christmas"] .season-picker:hover { border-color: #bba873; }
+html[data-theme="christmas"] ul#navigation > li > a { color: #c6d4c5; }
+html[data-theme="christmas"] ul#navigation li .fa { color: #91ad94; }
+html[data-theme="christmas"] ul#navigation li:hover { background: #263e30 !important; }
+html[data-theme="christmas"] ul#navigation li.currentmenu { border-color: #746246 !important; background: linear-gradient(90deg, rgba(213, 187, 113, .13), rgba(213, 187, 113, .03)) !important; }
+html[data-theme="christmas"] ul#navigation li.currentmenu a, html[data-theme="christmas"] ul#navigation li.currentmenu .fa { color: #eacb86; }
+html[data-theme="christmas"] ul#navigation li.currentmenu a::after { background-image: url('../assets/christmas/star.svg'); }
+html[data-theme="christmas"] .section-container { padding-top: 64px; }
+html[data-theme="christmas"] #main h3 { color: #f4ecd8; border-color: #3b5140; }
+html[data-theme="christmas"] #main h3::after { background: #b8a170; }
+html[data-theme="christmas"] #main a { color: #e6c47d; }
+html[data-theme="christmas"] #main a:hover, html[data-theme="christmas"] #main a:focus { color: #fff0c4; }
+html[data-theme="christmas"] #main b, html[data-theme="christmas"] #main strong { color: #eef0e2; }
+html[data-theme="christmas"] .table, html[data-theme="christmas"] .table > tbody > tr > td, html[data-theme="christmas"] .table > tbody > tr > th, html[data-theme="christmas"] .table > tr > td { border-color: #2f4436; }
+html[data-theme="christmas"] .table .label { background: #273c2e !important; border-color: #637151; color: #efd6a0; }
+html[data-theme="christmas"] .seasonal-caption { color: #bcc8ae; }
+html[data-theme="christmas"] .seasonal-caption::before { background: #e5c880; box-shadow: 0 0 12px rgba(226, 197, 121, .4); }
+html[data-theme="christmas"] .haunt-decorations, html[data-theme="christmas"] .main-pumpkin, html[data-theme="christmas"] .ghost-icon { display: none; }
+html[data-theme="christmas"] .gift-icon { display: block; }
+html[data-theme="christmas"] .main-tree { display: block; position: fixed; left: 302px; bottom: 12px; width: 132px; height: 158px; z-index: 10; pointer-events: none; }
+.season-portrait { position: relative; }
+html[data-theme="christmas"] .portrait-holly { display: block; position: absolute; width: 60px; height: 46px; right: 12px; top: -2px; pointer-events: none; }
+html[data-theme="christmas"] .portrait-holly img { display: block; width: 60px; height: 46px; }
+html[data-theme="christmas"] .christmas-decorations { display: block; position: fixed; inset: 0 0 0 294px; z-index: 5; overflow: hidden; pointer-events: none; }
+.fairy-lights { position: absolute; top: 0; left: 50%; width: 100%; min-width: 950px; height: 58px; transform: translateX(-50%); }
+.snowflake { position: absolute; left: var(--x); top: -25px; width: 10px; height: 10px; background: url('../assets/christmas/snowflake.svg') center/contain no-repeat; opacity: 0; animation: snow-fall var(--duration) linear infinite; animation-delay: var(--delay); }
+html[data-theme="christmas"] .ghost-trigger { background: #293b2a; border-color: #81734f; color: #efd295; }
+html[data-theme="christmas"] .ghost-trigger:hover { border-color: #e0bc71; }
+html[data-theme="christmas"] .ghost-note { border-color: #80704d; background: #263b2d; color: #f5e8c6; }
+html[data-theme="christmas"] .ghost-close { color: #d5c698; }
+html[data-theme="christmas"] .mobilemenu { border-color: #7a7952; background: #243c2e; color: #edcf91; }
+@keyframes snow-fall { 0% { opacity: 0; transform: translate3d(0,0,0) rotate(0deg); } 8% { opacity: .3; } 92% { opacity: .3; } 100% { opacity: 0; transform: translate3d(12px,105vh,0) rotate(135deg); } }
+@media (max-width: 1199px) and (min-width: 992px) { html[data-theme="christmas"] .main-tree { width: 116px; height: 139px; } }
+@media (max-width: 991px) {
+  html[data-theme="christmas"] .christmas-decorations { left: 0; }
+  html[data-theme="christmas"] .section-container { padding-top: 88px; padding-bottom: 190px; }
+  html[data-theme="christmas"] .main-tree { position: absolute; left: 18px; width: 120px; height: 144px; }
+}
+@media (prefers-reduced-motion: reduce) { .snowflake { display: none; } }
+@media print {
+  .main-tree, .christmas-decorations, .portrait-holly { display: none !important; }
+  html[data-theme="christmas"] body, html[data-theme="christmas"] #main .page { background: white; color: black; }
+  html[data-theme="christmas"] #main a, html[data-theme="christmas"] #main b, html[data-theme="christmas"] #main strong, html[data-theme="christmas"] #main h3 { color: black; }
+  html[data-theme="christmas"] .table .label { background: white !important; color: black; border-color: #777; }
+  html[data-theme="christmas"] .section-container { padding: 0; }
+}

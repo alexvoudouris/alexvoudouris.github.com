@@ -8,33 +8,13 @@
 
 /* General styles
  **************************************************/
-@font-face {
-	font-family: 'Lato';
-	font-style: normal;
-	font-weight: 300;
-	src: local('Lato Light'), local('Lato-Light'), url(http://themes.googleusercontent.com/static/fonts/lato/v6/KT3KS9Aol4WfR6Vas8kNcg.woff) format('woff');
-}
 
-@font-face {
-	font-family: 'Lato';
-	font-style: normal;
-	font-weight: 400;
-	src: local('Lato Regular'), local('Lato-Regular'), url(http://themes.googleusercontent.com/static/fonts/lato/v6/9k-RPmcnxYEPm8CNFsH2gg.woff) format('woff');
-}
 
-@font-face {
-	font-family: 'Lato';
-	font-style: normal;
-	font-weight: 900;
-	src: local('Lato Black'), local('Lato-Black'), url(http://themes.googleusercontent.com/static/fonts/lato/v6/BVtM30trf7q_jfqYeHfjtA.woff) format('woff');
-}
 
-@font-face {
-	font-family: 'Lato';
-	font-style: italic;
-	font-weight: 400;
-	src: local('Lato Italic'), local('Lato-Italic'), url(http://themes.googleusercontent.com/static/fonts/lato/v6/oUan5VrEkpzIazlUe5ieaA.woff) format('woff');
-}
+
+
+
+
 
 body {
 	font-size: 16px;
@@ -164,7 +144,7 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 {
 	display: none;
 	z-index: 300;
 	cursor: crosshair;
-	cursor: url(../img/pointer.png), auto;
+	cursor: auto;
 }
 
 #runner {
@@ -198,7 +178,7 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 {
 }
 
 #profile .portrate {
-	background-image: url("../img/personal/nus-logo-small.jpg");
+	background-image: none;
 	width: 125px;
 	margin: 0 auto;
 	height: 125px;
@@ -933,7 +913,7 @@ ul.timeline li .data .text {
 /* home
  **************************************************/
  .home .pageheader{
-	background-image: url(../img/home.jpg);
+	background-image: none;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
@@ -943,13 +923,13 @@ ul.timeline li .data .text {
 	border: none;
 }
 .home .fixedbg.parallax{
-	background: #fff url('../img/home-parallaxbg.jpg');
+	background: #fff none;
 }
 
 /* publications
  **************************************************/
  #publications .pageheader{
-	background-image: url(../img/publications.jpg);
+	background-image: none;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
@@ -1028,7 +1008,7 @@ ul.timeline li .data .text {
 /* Gallery
  **************************************************/
 #gallery .pageheader{
-	background-image: url(../img/gallery-head.jpg);
+	background-image: none;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
@@ -1214,7 +1194,7 @@ ul.grid li a,ul.grid li img {
 /* research
  **************************************************/
 #research .pageheader{
-	background-image: url(../img/research.jpg);
+	background-image: none;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
@@ -1229,7 +1209,7 @@ ul.grid li a,ul.grid li img {
 /* people
  **************************************************/
 #people .pageheader{
-	background-image: url(../img/people.jpg);
+	background-image: none;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
@@ -1244,7 +1224,7 @@ ul.grid li a,ul.grid li img {
 /* projects
  **************************************************/
 #projects .pageheader{
-	background-image: url(../img/projects.jpg);
+	background-image: none;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
@@ -1259,7 +1239,7 @@ ul.grid li a,ul.grid li img {
 /* contact
  **************************************************/
 #contact .pageheader{
-	background-image: url(../img/contact.jpg);
+	background-image: none;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
@@ -1272,11 +1252,11 @@ ul.grid li a,ul.grid li img {
 }
 
 .contact-office {
-	background: #fff url('../img/contact-office.jpg') no-repeat;
+	background: #fff none no-repeat;
 }
 
 .contact-lab {
-	background: #fff url('../img/contact-lab.jpg') no-repeat;
+	background: #fff none no-repeat;
 	color: #fff;
 }
 
@@ -1359,4 +1339,4 @@ ul.grid li a,ul.grid li img {
 	
 }
 
-}
+
