@@ -1,32 +1,25 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="halloween">
+<html lang="en" data-theme="classic">
     <head>
-        <title>Alexandros Voudouris — About me · Halloween edition</title>
+        <title id="page-title" data-base-title="Alexandros Voudouris — About me">Alexandros Voudouris — About me</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
         <meta name="description" content="Alexandros Voudouris homepage" />
         <meta name="keywords" content="cs, algorithms, game theory, approximation, learning, social choice" />
 
-        <!-- Local fonts and styles: no build step or external asset requests. -->
+        <!-- Theme settings apply before painting; all assets are local. -->
+        <script src="js/theme-config.js"></script>
         <link rel="stylesheet" href="css/fonts.css">
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="css/style.css">
         <link id="theme-style" rel="stylesheet" href="css/styles/default.css">
-        <link rel="stylesheet" href="css/halloween.css">
-        <link rel="icon" type="image/svg+xml" href="assets/halloween/pumpkin.svg">
+        <link rel="stylesheet" href="css/seasons.css">
+        <link rel="stylesheet" href="css/christmas.css">
+        <link rel="stylesheet" href="css/classic-refresh.css">
+        <link id="season-favicon" rel="icon" type="image/svg+xml" href="assets/monogram.svg">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#18131d">
-        <script>
-        (function () {
-            var root = document.documentElement;
-            root.classList.add('js-enabled');
-            try {
-                var saved = window.localStorage.getItem('alexvoudouris-season-theme');
-                if (saved === 'classic' || saved === 'halloween') root.dataset.theme = saved;
-            } catch (error) {}
-        })();
-        </script>
-        <script src="js/halloween.js" defer></script>
+        <meta name="theme-color" content="#10241e">
+        <script src="js/seasons.js" defer></script>
 
     </head>
     <body>
@@ -35,6 +28,17 @@
       <img class="corner-web" src="assets/halloween/web.svg" width="170" height="170" alt="">
       <img class="margin-bat bat-one" src="assets/halloween/bat.svg" width="38" height="20" alt="">
       <img class="margin-bat bat-two" src="assets/halloween/bat.svg" width="24" height="20" alt="">
+    </div>
+    <div class="christmas-decorations" aria-hidden="true">
+      <img class="fairy-lights" src="assets/christmas/lights.svg" width="1200" height="64" alt="">
+      <span class="snowflake" style="--x:2%;--duration:24s;--delay:-10s"></span>
+      <span class="snowflake" style="--x:96%;--duration:21s;--delay:-3s"></span>
+      <span class="snowflake" style="--x:89%;--duration:28s;--delay:-19s"></span>
+      <span class="snowflake" style="--x:5%;--duration:31s;--delay:-25s"></span>
+      <span class="snowflake" style="--x:98%;--duration:26s;--delay:-13s"></span>
+      <span class="snowflake" style="--x:92%;--duration:33s;--delay:-27s"></span>
+      <span class="snowflake" style="--x:1%;--duration:29s;--delay:-6s"></span>
+      <span class="snowflake" style="--x:94%;--duration:25s;--delay:-17s"></span>
     </div>
     <button id="menu-backdrop" class="menu-backdrop" type="button" aria-label="Close navigation" tabindex="-1" hidden></button>
 
@@ -48,23 +52,29 @@
 					<!-- Profile/logo section-->
 					<div id="profile" class="clearfix">
 						<div class="bg text-center" id="home">
-    					<img id="profile-photo" src="assets/halloween/portrait.png" data-halloween-src="assets/halloween/portrait.png" data-classic-src="voudouris25c.jpg" class="img-responsive img-circle center" width="208" height="247" alt="Alexandros Voudouris in a pumpkin-patterned suit on a Halloween porch" fetchpriority="high">
+    					<div class="season-portrait">
+              <img id="profile-photo" src="voudouris25c.jpg" data-halloween-src="assets/halloween/portrait.png" data-christmas-src="assets/christmas/portrait.png" data-classic-src="voudouris25c.jpg" class="img-responsive img-circle center" width="208" height="247" alt="Alexandros Voudouris" fetchpriority="high">
+              <span class="portrait-holly" aria-hidden="true"><img src="assets/christmas/holly.svg" width="60" height="46" alt=""></span>
+            </div>
 						</div>
 
 						<div class="title">
    						<h2><b>Alexandros Voudouris</b></h2>
 						<h3><b>Associate Professor</b></h3>
    						<h3><b>University of Southern Denmark</b></h3>
-<p class="seasonal-tagline">Algorithms, games, and other dark arts.</p>
+<p class="seasonal-tagline" id="seasonal-tagline">Algorithms, games, and a little Christmas magic.</p>
 						</div>   
 					</div>
 					<!-- /Profile/logo section-->
    				
-					<div class="season-controls" data-needs-js>
-          <button class="season-toggle" id="season-toggle" type="button" aria-pressed="true" aria-label="Halloween mode">
-            <span class="season-toggle-label"><img src="assets/halloween/pumpkin.svg" width="18" height="18" alt="">Halloween mode</span>
-            <span class="season-toggle-track" aria-hidden="true"></span>
-          </button>
+					<div class="profile-links" aria-label="Profile links"><a href="mailto:voudouris@imada.sdu.dk"><i class="fa fa-envelope-o" aria-hidden="true"></i>Email</a><a href="cv-voudouris.pdf"><i class="fa fa-file-text-o" aria-hidden="true"></i>CV</a><a href="https://scholar.google.com/citations?user=YL5djpEAAAAJ" target="_blank" rel="noopener noreferrer"><i class="fa fa-graduation-cap" aria-hidden="true"></i>Scholar</a></div>
+<div class="season-controls" data-needs-js>
+          <label class="season-picker-label" for="season-select">Appearance</label>
+          <select class="season-picker" id="season-select" name="appearance">
+            <option value="classic" selected>Classic</option>
+            <option value="halloween">🎃 Halloween</option>
+            <option value="christmas">🎄 Christmas</option>
+          </select>
         </div>
         <!-- Main navigation-->
 					<div id="main-nav">
@@ -137,6 +147,7 @@
 
 <div id="main" role="main" tabindex="-1">
 <img class="main-pumpkin" src="assets/halloween/jack-o-lantern.svg" width="132" height="148" alt="" aria-hidden="true">
+<img class="main-tree" src="assets/christmas/tree.svg" width="132" height="158" alt="" aria-hidden="true">
 <div id="biography" class="page home" data-pos="home">              
 <div class="pagecontents">
 
@@ -144,752 +155,494 @@
 <div class="section-container">
 				
 <div class="row">
-<div class="col-md-12">
-				  	
-<p class="seasonal-caption">Halloween edition</p>
-<h3><span class="label" style="background-color: #474e5d">About me</span></h3>
-
-<table class="table">	
-<tr>
-<td>
-I'm an Associate Professor of <a href="https://algorithms.sdu.dk/" target="_blank" rel="noopener noreferrer">Algorithms</a> at the <a href="https://www.sdu.dk/en/om-sdu/institutter-centre/imada_matematik_og_datalogi" target="_blank" rel="noopener noreferrer">Department of Mathematics and Computer Science</a> of the <a href="https://www.sdu.dk/en/om-sdu/sdu-campusser/vejle" target="_blank" rel="noopener noreferrer">University of Southern Denmark (SDU Vejle)</a>. 
-
-<br />
-<br />
-	
-Prior to this, I spent a bit more than 6 years at the <a href="https://www.essex.ac.uk/departments/computer-science-and-electronic-engineering" target="_blank" rel="noopener noreferrer">School of Computer Science and Electronic Engineering (CSEE)</a> of the University of Essex, first as an Assistant Professor (April 2020 - September 2023) and then as an Associate Professor (October 2023 - July 2026). Even before that, I was a postdoctoral researcher (Research Associate) at the <a href="http://www.cs.ox.ac.uk" target="_blank" rel="noopener noreferrer">Department of Computer Science</a> of the University of Oxford, hosted by <a href="http://www.cs.ox.ac.uk/people/edith.elkind/" target="_blank" rel="noopener noreferrer">Edith Elkind</a> (October 2018 - March 2020).
-I obtained my PhD in computer science in September 2018 from the <a href="http://www.upatras.gr/" target="_blank" rel="noopener noreferrer">University of Patras</a>, where I was advised by <a href="https://cs.au.dk/~iannis/" target="_blank" rel="noopener noreferrer">Ioannis Caragiannis</a>.
-
-	
-<!--
-
-At CSEE, I'm the Director of the <a href="https://www.essex.ac.uk/centres-and-institutes/computational-finance-and-economic-agents">Centre for Computational Finance and Economic Agents</a> (since August 2024) and a member of the <a href="https://www.essex.ac.uk/departments/computer-science-and-electronic-engineering/research/artificial-intelligence">Artificial Intelligence</a> group. I am also the UG Theme Lead for Computer Science (since September 2023), the PGT Theme Lead for Computational Finance (since September 2023), and the CCFEA PGT Selector (since July 2021). 
-
--->
-	
-<br />
-<br />
-
-I'm an Editor for <a href="https://www.sciencedirect.com/journal/theoretical-computer-science" target="_blank" rel="noopener noreferrer">Theoretical Computer Science</a> and <a href="https://www.sciencedirect.com/journal/information-processing-letters" target="_blank" rel="noopener noreferrer">Information Processing Letters</a>.
-<br />
-<br />
-
-My research interests lie at the intersection of theoretical computer science, artificial intelligence, and microeconomic theory. I am highly interested in the design and analysis of simple algorithms for fundamental problems in algorithmic game theory and computational social choice. 
-</td>
-</tr>
-</table>
-
-<h3><span class="label" style="background-color: #474e5d">Contact info</span></h3>
-
-<table class="table">	
-<tr>
-<td>
-Spinderigade 24, 7100 Vejle, Denmark  <br />
-voudouris [at] imada [dot] sdu [dot] dk <br />
-voudourisalexandros [at] gmail [dot] com <br />
-</td>
-</tr>
-</table>
-
-<h3><span class="label" style="background-color: #f0ad4e">News</span></h3>
-
-<table class="table">
-
-<tr>
+<div class="col-md-12"><p class="seasonal-caption" id="seasonal-caption"></p><header class="page-heading"><p class="eyebrow">Theoretical computer science · SDU Vejle</p>
+  <div class="profile-intro"><p>I'm an Associate Professor of <a href="https://algorithms.sdu.dk/" target="_blank" rel="noopener noreferrer">Algorithms</a> at the <a href="https://www.sdu.dk/en/om-sdu/institutter-centre/imada_matematik_og_datalogi" target="_blank" rel="noopener noreferrer">Department of Mathematics and Computer Science</a> of the <a href="https://www.sdu.dk/en/om-sdu/sdu-campusser/vejle" target="_blank" rel="noopener noreferrer">University of Southern Denmark (SDU Vejle)</a>.</p><p>Prior to this, I spent a bit more than 6 years at the <a href="https://www.essex.ac.uk/departments/computer-science-and-electronic-engineering" target="_blank" rel="noopener noreferrer">School of Computer Science and Electronic Engineering (CSEE)</a> of the University of Essex, first as an Assistant Professor (April 2020 - September 2023) and then as an Associate Professor (October 2023 - July 2026). Even before that, I was a postdoctoral researcher (Research Associate) at the <a href="http://www.cs.ox.ac.uk" target="_blank" rel="noopener noreferrer">Department of Computer Science</a> of the University of Oxford, hosted by <a href="http://www.cs.ox.ac.uk/people/edith.elkind/" target="_blank" rel="noopener noreferrer">Edith Elkind</a> (October 2018 - March 2020).
+I obtained my PhD in computer science in September 2018 from the <a href="http://www.upatras.gr/" target="_blank" rel="noopener noreferrer">University of Patras</a>, where I was advised by <a href="https://cs.au.dk/~iannis/" target="_blank" rel="noopener noreferrer">Ioannis Caragiannis</a>.</p><p>I'm an Editor for <a href="https://www.sciencedirect.com/journal/theoretical-computer-science" target="_blank" rel="noopener noreferrer">Theoretical Computer Science</a> and <a href="https://www.sciencedirect.com/journal/information-processing-letters" target="_blank" rel="noopener noreferrer">Information Processing Letters</a>.</p><p>My research interests lie at the intersection of theoretical computer science, artificial intelligence, and microeconomic theory. I am highly interested in the design and analysis of simple algorithms for fundamental problems in algorithmic game theory and computational social choice.</p></div>
+  <div class="intro-links"><a href="publications.html">Browse publications <span aria-hidden="true">→</span></a><a href="cv-voudouris.pdf">Download CV <span aria-hidden="true">↗</span></a></div></header><section class="content-block" aria-labelledby="news-heading"><div class="block-heading"><h2 id="news-heading">Latest news</h2></div><table class="table news-table"><tbody><tr>
 <td>
 <b>September 2026.</b>
 Paper accepted to AIJ: "Optimal metric distortion for matching on the line" (with A. Filos-Ratsikas, V. Gkatzelis, M. Latifian, and E. Rewinski).
 </td>
-</tr> 
-
-<tr>
+</tr><tr>
 <td>
 <b>August 2026.</b>
 Moved to the Department of Mathematics and Computer Science, University of Southern Denmark (SDU Vejle) as an Associate Professor of <a href="https://algorithms.sdu.dk/">Algorithms</a>. 
 </td>
-</tr> 
-
-<tr>
+</tr><tr>
 <td>
 <b>July 2026.</b>
 Paper accepted to TCS: "Constrained distributed heterogeneous two-facility location problems with max-variant cost" (with X. Xu, W. Liu, and Q. Fang).
 </td>
-</tr> 
-	
-<tr>
+</tr><tr>
 <td>
 <b>July 2026.</b>
 Two papers accepted to SAGT-26: "Network allocation games with anonymous preferences" (with A. Deligkas, E. Eiben, and Š. Schierreich) and 
 "Distributed agent-constrained truthful facility location" (with A. Deligkas and P. Kanellopoulos).
 </td>
-</tr> 
-
-<tr>
+</tr><tr>
 <td>
 <b>June 2026.</b>
 Paper accepted to JAIR: "Variety-seeking jump games on graphs" (with L. Narayanan, J. Opatrny, and S. Tummala). 
 </td>
-</tr> 
-
-<tr>
+</tr><tr>
 <td>
 <b>May 2026.</b>
 Paper accepted to AIJ: "Utilitarian distortion with predictions" (with A. Filos-Ratsikas and G. Kalantzis). 
 </td>
-</tr> 
-
-<tr>
+</tr></tbody></table><details class="news-archive"><summary>Earlier news <span>95 entries</span></summary><div><table class="table news-table"><tbody><tr>
 <td>
 <b>April 2026.</b>
 Paper accepted to Algorithmica: "Constrained truthful obnoxious two-facility location with optional preferences" (with P. Kanellopoulos). 
 </td>
-</tr> 
-
-<tr>
+</tr><tr>
 <td>
 <b>February 2026.</b>
 Paper accepted to JAAMAS: "Metric distortion under group-fair objectives" (with G. Amanatidis, E. Anshelevich, and C. Jerrett). 
 </td>
-</tr> 
-
-<tr>
+</tr><tr>
 <td>
 <b>21/12/2025.</b>
 Baby Orfeas is born!
 </td>
-</tr> 
-
-
-<tr>
+</tr><tr>
 <td>
 <b>October 2025.</b>
 Paper accepted to JAAMAS: "The distortion of threshold approval matching" (with M. Latifian).
 </td>
-</tr> 
-	
-
-<tr>
+</tr><tr>
 <td>
 <b>July 2025.</b>
 Paper accepted to ORL: "The price of EF1 for few agents with additive ternary valuations" (with M. Kyropoulou). 
 </td>
-</tr> 
-
-<tr>
+</tr><tr>
 <td>
 <b>July 2025.</b>
 Gave an invited talk on "Utilitarian Distortion with Predictions" at the <a href="https://archimedesai.gr/en/events/448-2025-archimedes-workshop-on-algorithmic-game-theory">2025 Archimedes Workshop on Algorithmic Game Theory</a>. 
 </td>
-</tr> 
-	
-<tr>
+</tr><tr>
 <td>
 <b>July 2025.</b>
 Paper accepted to ECAI-25: "Truthful facility location with candidate locations and limited resources" (with P. Kanellopoulos).
 </td>
-</tr> 
-
-<tr>
+</tr><tr>
 <td>
 <b>July 2025.</b>
 Together with Georgios Amanatidis and Aris Filos-Ratsikas, we organised the <a href="https://sites.google.com/view/fairacac25">2025 Workshop on Fair Resource Allocation: Concepts, Algorithms and Complexity</a> at ICALP 2025 on Monday, July 7th. 
 </td>
-</tr> 
-	
-<tr>
+</tr><tr>
 <td>
 <b>July 2025.</b>
 Gave an invited talk on "Distortion-Information Tradeoffs in Social Choice Problems" at the Algorithms Seminar in Southern Denmark University (SDU).
 </td>
-</tr> 
-
-<tr>
+</tr><tr>
 <td>
 <b>July 2025.</b>
 Two papers accepted to SAGT-25: "Metric distortion under group-fair objectives" (with G. Amanatidis, E. Anshelevich, and C. Jerrett), and "Constrained truthful obnoxious two-facility location with optional preferences" (with P. Kanellopoulos).
 </td>
-</tr> 
-	
-<tr>
+</tr><tr>
 <td>
 <b>June 2025.</b>
 Paper accepted to JAAMAS: "Diversity-seeking jump games in networks" (with L. Narayanan and Y. Sabbagh).
 </td>
-</tr> 
-	
-<tr>
+</tr><tr>
 <td>
 <b>May 2025.</b>
 Paper accepted to EC 2025: "Utilitarian distortion with predictions" (with A. Filos-Ratsikas and G. Kalantzis).
 </td>
-</tr> 
-
-<tr>
+</tr><tr>
 <td>
 <b>April 2025.</b>
 Paper accepted to JOCO: "Mechanism design with predictions for facility location games with candidate locations" (with J. Fang, Q. Fang, W. Liu, and Q. Nong)
 </td>
-</tr> 
-
-<tr>
+</tr><tr>
 <td>
 <b>April 2025.</b>
 Two papers accepted to IJCAI 2025: "Optimal metric distortion for matching on the line" (with A. Filos-Ratsikas, V. Gkatzelis, M. Latifian, and E. Rewinski) and "Variety-seeking jump games on graphs" (with L. Narayanan, J. Opatrny, and S. Tummala).
 </td>
-</tr> 
-
-<tr>
+</tr><tr>
 <td>
 <b>April 2025.</b>
 Our special issue on Economics and Computation at IPL has been completed. The article collection is available
 <a href="https://www.sciencedirect.com/special-issue/10JMM4DDRWT" target="_blank">here</a>. 
 </td>
-</tr>  
-
-<tr>
+</tr><tr>
 <td>
 <b>28/01/2025.</b>
 Paper accepted to AIJ: "Improved metric distortion via threshold approvals" (with  E. Anshelevich, A. Filos-Ratsikas, and C. Jerrett).
 </td>
-</tr>  	
-	
-<tr>
+</tr><tr>
 <td>
 <b>16/01/2025.</b>
 Paper accepted to IPL: "Metric distortion of obnoxious distributed voting".
 </td>
-</tr>  
-
-	
-<tr>
+</tr><tr>
 <td>
 <b>03/01/2025.</b>
 Paper accepted to JOCO: "Agent-constrained truthful facility location games" (with A. Deligkas and M. Lotfi).
 </td>
-</tr>  
-
-<tr>
+</tr><tr>
 <td>
 <b>14/10/2024.</b>
 Paper accepted to TCS: "Truthful two-facility location with candidate locations" (with P. Kanellopoulos and R. Zhang).
 </td>
-</tr>  
-	
-<tr>
+</tr><tr>
 <td>
 <b>09/08/2024.</b>
 Paper accepted to JAAMAS: "Truthful interval covering" (with A. Deligkas and A. Filos-Ratsikas).
 </td>
-</tr>  
-
-<tr>
+</tr><tr>
 <td>
 <b>01/08/2024.</b> 
 Started in my new role as Director of <a href="https://www.essex.ac.uk/centres-and-institutes/computational-finance-and-economic-agents">CCFEA</a>. 
 </td>
-</tr>
-
-<tr>
+</tr><tr>
 <td>
 <b>22/07/2024.</b> 
 AKT project with <a href="https://www.atombank.co.uk/">Atom Bank</a> has concluded successfully. 
 </td>
-</tr>
-
-<tr>
+</tr><tr>
 <td>
 <b>05/07/2024.</b>
 Paper accepted to SAGT 2024: "Agent-constrained truthful facility location games" (with A. Deligkas and M. Lotfi).
 </td>
-</tr>
-
-<tr>
+</tr><tr>
 <td>
 <b>01/07/2024.</b> 
 Our 30-month KTP project with <a href="https://www.broodylondon.com/">Broody London</a> has officially started. 
 </td>
-</tr>
-
-<tr>
+</tr><tr>
 <td>
 <b>16/04/2024.</b>
 Two papers accepted to IJCAI 2024: "The distortion of threshold approval matching" (with M. Latifian) and "Truthful interval covering" (with A. Deligkas and A. Filos-Ratsikas).
 </td>
-</tr>  
-
-<tr>
+</tr><tr>
 <td>
 <b>21/03/2024.</b> 
 Our 4-month AKT project with <a href="https://www.atombank.co.uk/">Atom Bank</a> has officially started. 
 </td>
-</tr>
-	
-<tr>
+</tr><tr>
 <td>
 <b>07/03/2024.</b>
 Paper accepted to TOCS: "Revisiting the distortion of distributed voting" (with A. Filos-Ratsikas)
 </td>
-</tr>  
-	
-<tr>
+</tr><tr>
 <td>
 <b>04/01/2024.</b>
 Paper accepted to AIJ: "The distortion of distributed facility location" (with A. Filos-Ratsikas, P. Kanellopoulos, and R. Zhang)
 </td>
-</tr>   
-	
-<tr>
+</tr><tr>
 <td>
 <b>16/12/2023.</b>
 Paper accepted to ORL: "On truthful constrained heterogeneous facility location with max-variant cost" (with M. Lotfi)
 </td>
-</tr>                 
-
-<tr>
+</tr><tr>
 <td>
 <b>09/12/2023.</b>
 Paper accepted to AAAI 2024: "Improved metric distortion via threshold approvals" (with E. Anshelevich, A. Filos-Ratsikas, and C. Jerrett)
 </td>
-</tr>
-
-<tr>
+</tr><tr>
 <td>
 <b>24/10/2023.</b>
 Paper accepted to SIDMA: "Don't roll the dice, ask twice: The two-query distortion of matching problems and beyond" (with G. Amanatidis, G. Birmpas, and A. Filos-Ratsikas)
 </td>
-</tr>
-
-<tr>
+</tr><tr>
 <td>
 <b>01/10/2023.</b> 
 Promoted to Associate Professor (Senior Lecturer in the UK academic rank system). 
 </td>
-</tr>
-
-<tr>
+</tr><tr>
 <td>
 <b>07/07/2023.</b> 
 Paper accepted to TCS: "Not all strangers are the same: The effect of tolerance in Schelling games" (with P. Kanellopoulos and M. Kyropoulou). 
 </td>
-</tr>
-
-<tr>
+</tr><tr>
 <td>
 <b>30/06/2023.</b> 
 Paper accepted to SAGT 2023: "Truthful two-facility location with candidate locations" (with P. Kanellopoulos and R. Zhang). 
 </td>
-</tr>	
-
-<tr>
+</tr><tr>
 <td>
 <b>12/06/2023.</b> 
 Our survey "Fair division of indivisible goods: Recent progress and open questions" (with G. Amanatidis, H. Aziz, G. Birmpas, A. Filos-Ratsikas, B. Li, H. Moulin, and X. Wu) has been accepted for publication to AIJ. 
 </td>
-</tr>	
-	
-<tr>
+</tr><tr>
 <td>
 <b>06/03/2023.</b> 
 Paper accepted to ORL: "Tight distortion bounds for distributed metric voting on a line". 
 </td>
-</tr>	
-	
-
-<tr>
+</tr><tr>
 <td>
 <b>02/03/2023.</b> 
 Paper accepted to GEB: "Heterogeneous facility location with limited resources" (with A. Deligkas and A. Filos-Ratsikas). 
 </td>
-</tr>	
-	
-<tr>
+</tr><tr>
 <td>
 <b>03/01/2023.</b> 
 Two papers accepted to AAMAS 2023: "Settling the distortion of distributed facility location" (with A. Filos-Ratsikas, P. Kanellopoulos, and R. Zhang), and "Reviting the distortion of distributed voting" (with A. Filos-Ratsikas). 
 </td>
-</tr>	
-	
-<tr>
+</tr><tr>
 <td>
 <b>08/12/2022.</b> 
 Our paper "On discrete truthful heterogeneous two-facility location" (with P. Kanellopoulos and R. Zhang) has been accepted to SIAM Journal on Discrete Math. 
 </td>
-</tr>
-
-<tr>
+</tr><tr>
 <td>
 <b>14/10/2022.</b> 
 I gave a talk at the <a href="https://www.comsocseminar.org/">COMSOC Video Seminar</a> on "The metric distortion of multiwinner voting". A video of the session is available <a href="https://www.youtube.com/watch?v=lMB3jsPe5eE">here</a>. 
 </td>
-</tr>
-	
-<tr>
+</tr><tr>
 <td>
 <b>29/9/2022.</b> 
 Paper accepted to ARTINT: "The metric distortion of multiwinner voting" (with I. Caragiannis and N. Shah).
 </td>
-</tr>
-
-<tr>
+</tr><tr>
 <td>
 <b>14/9/2022.</b> 
 Paper accepted to NeurIPS 2022: "Don't roll the dice, ask twice: The two-query distortion of matching problems and beyond" (with G. Amanatidis, G. Birmpas, and A. Filos-Ratsikas).
 </td>
-</tr>
-
-	
-<tr>
+</tr><tr>
 <td>
 <b>12-15/9/2022.</b> Together with Panagiotis Kanellopoulos and Maria Kyropoulou, we organized and co-chaired SAGT 2022 (15th International Symposium on Algorithmic Game Theory) at the University of Essex Campus (Colchester, UK). More information can be found at the official <a href="https://www.essex.ac.uk/events/2022/09/11/sagt-2022">SAGT 2022 website</a>.
 </td>
-</tr>
-
-<tr>
+</tr><tr>
 <td>
 <b>19/8/2022.</b> 
 A new extended <a href="https://arxiv.org/abs/2208.08782">version</a> of our survey "Fair Division of Indivisible Goods: A Survey" has been uploaded to arxiv. This version extends our IJCAI 2022 survey (with G. Amanatidis, G. Birmpas, and A. Filos-Ratsikas), and unifies it with the SIGecom Exchanges survey of H. Aziz, B. Li, H. Moulin, and X. Wu.
 </td>
-</tr>	
-
-	
-<tr>
+</tr><tr>
 <td>
 <b>22/6/2022.</b> 
 Baby Nefeli is born! 
 </td>
-</tr>
-	
-<tr>
+</tr><tr>
 <td>
 <b>21/6/2022.</b> 
 Paper accepted to MFCS 2022: "Not all strangers are the same: The impact of tolerance in Schelling games" (with P. Kanellopoulos and M. Kyropoulou).  
 </td>
-</tr>
-
-<tr>
+</tr><tr>
 <td>
 <b>10/5/2022.</b> 
 Paper accepted to Mathematical Programming: "Truthful ownership transfer with expert advice" (with I. Caragiannis, A. Filos-Ratsikas, and S. Nath).  
 </td>
-</tr>
-	
-<tr>
+</tr><tr>
 <td>
 <b>20/4/2022.</b> 
 Paper accepted to IJCAI 2022: "On discrete truthful heterogeneous two-facility location" (with P. Kanellopoulos and R. Zhang).  
 </td>
-</tr>
-	
-<tr>
+</tr><tr>
 <td>
 <b>14/4/2022.</b> 
 Our survey on discrete fair division of goods has been accepted to the IJCAI Survey Track 2022 (with G. Amanatidis, G. Birmpas, and A. Filos-Ratsikas). 
 </td>
-</tr>
-	
-<tr>
+</tr><tr>
 <td>
 <b>24/3/2022.</b> 
 Paper accepted to ARTINT: "The distortion of distributed metric social choice" (with E. Anshelevich and A. Filos-Ratsikas). This paper includes all the results of our WINE-21 paper and some lower bounds from our SAGT-21 paper. 
 </td>
-</tr>
-	
-<tr>
+</tr><tr>
 <td>
 <b>16/3/2022.</b> 
 I gave a talk at the ECUK seminar on "Information-distortion tradeoffs in social choice and matching". More info <a href="https://ecuk.doc.ic.ac.uk/alexandros-voudouris.html">here</a>.
 </td>
-</tr>
-	
-<tr>
+</tr><tr>
 <td>
 <b>3/3/2022.</b> 
 New paper uploaded to arxiv: "Don't roll the dice, ask twice: The two-query distortion of matching problems and beyond" (with G. Amanatidis, G. Birmpas, and A. Filos-Ratsikas).
 </td>
-</tr>
-	
-	
-<tr>
+</tr><tr>
 <td>
 <b>1/3/2022.</b> 
 Paper accepted to JAIR: "A few queries go a long way: Information-distortion tradeoffs in matching" (with G. Amanatidis, G. Birmpas and A. Filos-Ratsikas).
 </td>
-</tr>
-	
-<tr>
+</tr><tr>
 <td>
 <b>16/2/2022.</b> 
 Together with Georgios Amanatidis, Georgios Birmpas and Aris Filos-Ratsikas, we wrote a survey on fair division of individible goods. The survey is available on <a href = "https://arxiv.org/abs/2202.07551">arxiv</a>. 
 </td>
-</tr>
-	
-	
-<tr>
+</tr><tr>
 <td>
 <b>31/1/2022.</b> 
 CF paper accepted to CIFEr 2022: "Optimizing mixed-asset portfolios involving REITs " (with F. Habbab and M. Kampouridis).
 </td>
-</tr>
-	
-<tr>
+</tr><tr>
 <td>
 <b>1/12/2021.</b> 
 Two papers accepted to AAAI 2022: "The metric distortion of multiwinner voting" (with I. Caragiannis and N. Shah), and "Heterogeneous facility location with limited resources" (with A. Deligkas and A. Filos-Ratsikas).
 </td>
-</tr>
-	
-<tr>
+</tr><tr>
 <td>
 <b>1/11/2021.</b> 
 Paper accepted to Algorithmica: "Bounding the inefficiency of compromise in opinion formation" (with I. Caragiannis and P. Kanellopoulos).
 </td>
-</tr>
-	
-<tr>
+</tr><tr>
 <td>
 <b>17/9/2021.</b> 
 Paper accepted to JAIR: "Optimally deceiving a learning leader in Stackelberg games" (with G. Birmpas, J. Gan, A. Hollender, F. J. Marmolejo-Cossio, and N. Rajgopal).
 </td>
-</tr>
-
-<tr>
+</tr><tr>
 <td>
 <b>10/9/2021.</b> 
 New paper posted to arxiv:  <a href="https://arxiv.org/abs/2109.04234">On discrete truthful heterogeneous two-facility location</a> (in collaboration with Panagiotis Kanellopoulos, and our PhD student, Rongsen Zhang).
 </td>
-</tr>
-	
-<tr>
+</tr><tr>
 <td>
 <b>7/9/2021.</b> 
 Paper accepted to WINE 2021: "The distortion of distributed metric social choice" (with E. Anshelevich and A. Filos-Ratsikas).
 </td>
-</tr>
-	
-<tr>
+</tr><tr>
 <td>
 <b>5/8/2021.</b> 
 Paper accepted to ARTINT: "Schelling games on graphs" (with A. Agarwal, E. Elkind, J. Gan, A. Igarashi, and W. Suksompong).
 </td>
-</tr>
-	
-<tr>
+</tr><tr>
 <td>
 <b>23 - 24/7/2021.</b>  Together with G. Amanatidis, G. Birmpas and A. Filos-Ratsikas, we organized the <a href="https://sites.google.com/view/fairacac/">Workshop on Fair Resource Allocation: Concept, Algorithms and Complexity (FairACAC)</a>, in conjunction with EC 2021. 
 </td>
-</tr>
-	
-<tr>
+</tr><tr>
 <td>
 <b>12/7/2021.</b> 
 New paper posted to arxiv: <a href="https://arxiv.org/abs/2107.05456">The distortion of distributed social choice</a> (with E. Anshelevich and A. Filos-Ratsikas).
 </td>
-</tr>
-	
-<tr>
+</tr><tr>
 <td>
 <b>28/6/2021.</b> 
 Paper accepted to SAGT 2021: "Approximate mechanism design for distributed facility location" (with A. Filos-Ratsikas).
 </td>
-</tr>
-	
-<tr>
+</tr><tr>
 <td>
 <b>30/5/2021.</b> 
 Paper accepted to TCS: "Modified Schelling games" (with P. Kanellopoulos and M. Kyropoulou).
 </td>
-</tr>
-	
-<tr>
+</tr><tr>
 <td>
 <b>6/5/2021.</b> 
 Two new papers posted to arxiv: <a href="https://arxiv.org/abs/2105.02712">Heterogeneous facility location with limited resources</a> (with A. Deligkas and A. Filos-Ratsikas) and <a href="https://arxiv.org/abs/2105.02699">Not all strangers are the same: The impact of tolerance in Schelling games</a> (with P. Kanellopoulos and M. Kyropoulou).
 </td>
-</tr>
-
-<tr>
+</tr><tr>
 <td>
 <b>4/5/2021.</b> 
 Paper accepted to JAIR: "Welfare guarantees in Schelling segregation" (with M. Bullinger and W. Suksompong).
 </td>
-</tr>
-	
-<tr>
+</tr><tr>
 <td>
 <b>16/4/2021.</b> 
 Our survey on the distortion in social choice problems (with E. Anshelevich, A. Filos-Ratsikas, and N. Shah) was accepted to the IJCAI 2021 Survey Track!
 </td>
-</tr>
-
-<tr>
+</tr><tr>
 <td>
 <b>1/3/2021.</b> 
 Together with Elliot Anshelevich, Aris Filos-Ratsikas and Nisarg Shah, we wrote a short survey on the distortion in social choice problems. The survey is available on <a href="https://arxiv.org/abs/2103.00911">arxiv</a>.
 </td>
-</tr>
-	
-<tr>
+</tr><tr>
 <td>
 <b>19/2/2021.</b> Paper accepted to ARTINT: "Peeking behind the ordinal curtain: Improving distortion via cardinal queries" (with G. Amanatidis, G. Birmpas, and A. Filos-Ratsikas).
 </td>
-</tr>
-	
-<tr>
+</tr><tr>
 <td>
 <b>6/2/2021.</b> Paper accepted to TCS: "Maximum Nash welfare and other stories about EFX" (with G. Amanatidis, G. Birmpas, A. Filos-Ratsikas, and A. Hollender).
 </td>
-</tr>
-
-<tr>
+</tr><tr>
 <td>
 <b>2/12/2020.</b> Two papers accepted to AAAI 2021: "A few queries go a long way: Information-distortion tradeoffs in matching" (with G. Amanatidis, G. Birmpas and A. Filos-Ratsikas) and "Welfare guarantees in Schelling segregation" (with M. Bullinger and W. Suksompong).
 </td>
-</tr>	
-	
-<tr>
+</tr><tr>
 <td>
 <b>13/10/2020.</b> Our paper "Protecting elections by recounting ballots" (with Edith Elkind, Jiarui Gan, Svetlana Obraztsova, and Zinovi Rabinovich) has been accepted for publication to <i>Artificial Intelligence</i>!
 </td>
-</tr>
-
-<tr>
+</tr><tr>
 <td>
 <b>25/9/2020.</b> Our paper "Optimally deceiving a learning leader in Stackelberg games" (with Georgios Birmpas, Jiarui Gan, Alexandros Hollender, Francisco J. Marmolejo-Cossio, and Ninad Rajgopal) has been accepted to NeurIPS 2020!
 </td>
-</tr>	
-	
-<tr>
+</tr><tr>
 <td>
 <b>14/9/2020.</b> New paper posted on arxiv: <a href="https://arxiv.org/abs/2009.06543">A few queries go a long way: Information-distortion tradeoffs in matching</a> (with Georgios Amanatidis, Georgios Birmpas, and Aris Filos-Ratsikas).
 </td>
-</tr>
-	
-<tr>
+</tr><tr>
 <td>
 <b>20/7/2020.</b> Paper accepted to TCS: "Simple combinatorial auctions with budget constraints"!
 </td>
-</tr>
-	
-<tr>
+</tr><tr>
 <td>
 <b>14/7/2020.</b> New paper posted on arxiv: <a href="https://arxiv.org/abs/2007.06304">Approximate mechanism design for distributed facility location</a> (with Aris Filos-Ratsikas).
 </td>
-</tr>
-	
-<tr>
+</tr><tr>
 <td>
 <b>12/7/2020.</b> Our paper "Almost envy-freeness in group resource allocation" (with Maria Kyropoulou and Warut Suksompong) has been accepted for publication to TCS!
 </td>
-</tr>
-	
-<tr>
+</tr><tr>
 <td>
 <b>30/6/2020.</b> Our paper "Modified Schelling games" (with Panagiotis Kanellopoulos and Maria Kyropoulou) has been accepted to SAGT 2020!
 </td>
-</tr>
-	
-<tr>
+</tr><tr>
 <td>
 <b>12/6/2020.</b> New paper posted on arxiv: <a href="https://arxiv.org/abs/2006.06566">Optimally deceiving a learning leader in Stackelberg games</a> (with Georgios Birmpas, Jiarui Gan, Alexandros Hollender, Francisco J. Marmolejo-Cossio, and Ninad Rajgopal).
 </td>
-</tr>	
-	
-<tr>
+</tr><tr>
 <td>
 <b>5/6/2020.</b> Our paper "The distortion of distributed voting" has been accepted for publication to <i>Artificial Intelligence</i> (with Aris Filos-Ratsikas and Evi Micha).
 </td>
-</tr>	
-	
-<tr>
+</tr><tr>
 <td>
 <b>26/5/2020.</b> New paper posted on arxiv: <a href="https://arxiv.org/abs/2005.12149">Modified Schelling games</a> (with Panagiotis kanellopoulos and Maria Kyropoulou).
 </td>
-</tr>
-	
-<tr>
+</tr><tr>
 <td>
 <b>20/4/2020.</b> Our paper "Maximum Nash welfare and other stories about EFX" (with Georgios Amanatidis, Georgios Birmpas, Aris Filos-Ratsikas, and Alexandros Hollender) has been accepted to IJCAI 2020!
 </td>
-</tr>
-
-<tr>
+</tr><tr>
 <td>
 <b>4/4/2020.</b> Our paper "How effective can simple ordinal peer grading be?" has been accepted for publication to <i>ACM Transactions on Economics and Computation</i> (with Iannis Caragiannis and George Krimpas).
 </td>
-</tr>
-
-<tr>
+</tr><tr>
 <td>
 <b>1/4/2020.</b> Moved to the University of Essex as an Assistant Professor (Lecturer in the UK academic rank system).
 </td>
-</tr>
-
-<tr>
+</tr><tr>
 <td>
 <b>24 - 28/2/2020.</b> Visiting Maria Kyropoulou and Panagiotis Kanellopoulos at the University of Essex, where I will also give a talk on 
 <a href="https://arxiv.org/abs/1907.08165">Peeking behind the ordinal curtain: Improving distortion via cardinal queries</a> and a general introduction to the distortion literature.
 </td>
-</tr>
-
-<tr>
+</tr><tr>
 <td>
 <b>19/2/2020.</b> Our paper "The efficiency of resource allocation mechanisms for budget-constrained users" has been accepted for publication to <i>Mathematics of Operations Research</i> (with Iannis Caragiannis).
 </td>
-</tr>
-
-
-<tr>
+</tr><tr>
 <td>
 <b>7 - 12/2/2020.</b> Attending AAAI 2020 at New York City, NY, USA, where Georgios Birmpas will present our paper <a href="https://arxiv.org/abs/1907.08165">Peeking behind the ordinal curtain: Improving distortion via cardinal queries</a> (also with Georgios Amanatidis and Aris Filos-Ratsikas) and Aisha Agarwal will present our paper <a href="https://arxiv.org/abs/1909.02421">Swap stability in Schelling games on graphs</a> (also with Edith Elkind and Jiarui Gan).
 </td>
-</tr>
-
-<tr>
+</tr><tr>
 <td>
 <b>28/1/2020.</b> New paper posted on arxiv: <a href="https://arxiv.org/abs/2001.09838">Maximum Nash welfare and other stories about EFX</a> (with Georgios Amanatidis, Georgios Birmpas, Aris Filos-Ratsikas, and Alexandros Hollender). 
 </td>
-</tr>
-
-<tr>
+</tr><tr>
 <td>
 <b>17/12/2019.</b> Our paper <a href="https://doi.org/10.1016/j.comnet.2019.107068">Energy-aware tree network formation among computationally weak nodes</a> has been accepted for publication to <i>Computer Networks</i> (with Adelina Madhja and Sotiris Nikoletseas). 
 </td>
-</tr>
-
-<tr>
+</tr><tr>
 <td>
 <b>11/11/2019.</b> Two papers accepted to AAAI 2020! <a href="https://arxiv.org/abs/1907.08165">Peeking behind the ordinal curtain: Improving distortion via cardinal queries</a> (with Georgios Amanatidis, Georgios Birmpas, and Aris Filos-Ratsikas) and <a href="https://arxiv.org/abs/1909.02421">Swap stability in Schelling games on graphs</a> (with Aishwarya Agarwal, Edith Elkind, and Jiarui Gan).
 </td>
-</tr>
-
-<tr>
+</tr><tr>
 <td>
 <b>4 - 12/10/2019.</b> Visiting Iannis Caragiannis at the University of Patras (Short Term Scientific Mission (STSM) supported by COST Action CA16228 - European Network for Game Theory).
 </td>
-</tr>
-
-
-<tr>
+</tr><tr>
 <td>
 <b>30/9 - 3/10/2019.</b> Attending SAGT 2019 at Athens, Greece where Evi Micha will present our paper <a href="https://doi.org/10.1007/978-3-030-30473-7_21">The distortion of distributed voting</a> (also with Aris Filos-Ratsikas). 
 </td>
-</tr>
-
-<tr>
+</tr><tr>
 <td>
 <b>9 - 16/8/2019.</b> Attending IJCAI 2019 at Macao, China to present our paper <a href="https://www.ijcai.org/proceedings/2019/0038.pdf">Schelling games on graphs</a> (with E. Elkind, J. Gan, A. Igarashi, and W. Suksompong). Also, Jiarui Gan will present our paper <a href="https://www.ijcai.org/proceedings/2019/0037.pdf">Protecting elections by recounting ballots</a> (also with E. Elkind, S. Obraztsova, and Z. Rabinovich), and Warut Suksompong will present our paper <a href="https://www.ijcai.org/proceedings/2019/0057.pdf">Almost envy-freeness for group resource allocation</a> (also with M. Kyropoulou). 
 </td>
-</tr>
-
-<tr>
+</tr><tr>
 <td>
 <b>22 - 25/7/2019.</b> Teaching an introductory course on Algorithmic Game Theory at Oriel College, Oxford (part of a summer school organised by <a href="https://cbl-international.com/">CBL-International</a>). The course material is available <a href="teaching.html">here</a>. 
 </td>
-</tr>
-
-</table>
-
-</div>
+</tr></tbody></table></div></details></section><section class="content-block contact-block"><h2>Contact</h2><address>
+Spinderigade 24, 7100 Vejle, Denmark  <br />
+voudouris [at] imada [dot] sdu [dot] dk <br />
+voudourisalexandros [at] gmail [dot] com <br />
+</address></section></div>
 </div>
 </div> 
 </div>
@@ -900,12 +653,13 @@ Together with Elliot Anshelevich, Aris Filos-Ratsikas and Nisarg Shah, we wrote 
     
 	
 
-    <button class="ghost-trigger" id="ghost-trigger" type="button" aria-label="A message from the resident ghost" aria-controls="ghost-note" aria-expanded="false" data-needs-js>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M7 26V13a9 9 0 0 1 18 0v13l-4-3-5 4-5-4-4 3Z" fill="currentColor" opacity=".9"/><ellipse cx="12.5" cy="13.5" rx="1.4" ry="2" fill="#251c2b"/><ellipse cx="19.5" cy="13.5" rx="1.4" ry="2" fill="#251c2b"/><path d="M14 20q2-3 4 0" stroke="#251c2b" stroke-width="1.5" stroke-linecap="round"/></svg>
+    <button class="ghost-trigger" id="ghost-trigger" type="button" aria-label="Open a little Christmas present" aria-controls="ghost-note" aria-expanded="false" data-needs-js>
+      <svg class="ghost-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M7 26V13a9 9 0 0 1 18 0v13l-4-3-5 4-5-4-4 3Z" fill="currentColor" opacity=".9"/><ellipse cx="12.5" cy="13.5" rx="1.4" ry="2" fill="#251c2b"/><ellipse cx="19.5" cy="13.5" rx="1.4" ry="2" fill="#251c2b"/><path d="M14 20q2-3 4 0" stroke="#251c2b" stroke-width="1.5" stroke-linecap="round"/></svg>
+<svg class="gift-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M6 15h20v13H6Z" fill="currentColor" opacity=".15"/><path d="M4 10h24v6H4ZM6 16v12h20V16M16 10v18" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M16 10C4 10 8 0 13 5l3 5c12 0 8-10 3-5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
     </button>
     <div class="ghost-note" id="ghost-note" hidden>
-      <span role="status" aria-live="polite">Still waiting for Reviewer 2.</span>
-      <button class="ghost-close" id="ghost-close" type="button" aria-label="Dismiss ghost message">×</button>
+      <span id="seasonal-message" role="status" aria-live="polite">All I want for Christmas is an acceptance.</span>
+      <button class="ghost-close" id="ghost-close" type="button" aria-label="Dismiss seasonal message">×</button>
     </div>
 
 </body>

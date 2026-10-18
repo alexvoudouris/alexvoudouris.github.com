@@ -1,34 +1,27 @@
-<!DOCTYPE html> <html lang="en" data-theme="halloween"> 
+<!DOCTYPE html> <html lang="en" data-theme="classic"> 
 
 	<head>
-        <title>Alexandros Voudouris — Teaching · Halloween edition</title>
+        <title id="page-title" data-base-title="Alexandros Voudouris — Teaching">Alexandros Voudouris — Teaching</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">    
         <meta name="description" content="Alexandros Voudouris homepage" />
         <meta name="keywords" content="cs, algorithms, game theory, approximation, learning, social choice" />
 
        
 
-        <!-- Local fonts and styles: no build step or external asset requests. -->
+        <!-- Theme settings apply before painting; all assets are local. -->
+        <script src="js/theme-config.js"></script>
         <link rel="stylesheet" href="css/fonts.css">
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="css/style.css">
         <link id="theme-style" rel="stylesheet" href="css/styles/default.css">
-        <link rel="stylesheet" href="css/halloween.css">
-        <link rel="icon" type="image/svg+xml" href="assets/halloween/pumpkin.svg">
+        <link rel="stylesheet" href="css/seasons.css">
+        <link rel="stylesheet" href="css/christmas.css">
+        <link rel="stylesheet" href="css/classic-refresh.css">
+        <link id="season-favicon" rel="icon" type="image/svg+xml" href="assets/monogram.svg">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#18131d">
-        <script>
-        (function () {
-            var root = document.documentElement;
-            root.classList.add('js-enabled');
-            try {
-                var saved = window.localStorage.getItem('alexvoudouris-season-theme');
-                if (saved === 'classic' || saved === 'halloween') root.dataset.theme = saved;
-            } catch (error) {}
-        })();
-        </script>
-        <script src="js/halloween.js" defer></script>
+        <meta name="theme-color" content="#10241e">
+        <script src="js/seasons.js" defer></script>
 
     </head> 
     <body>
@@ -37,6 +30,17 @@
       <img class="corner-web" src="assets/halloween/web.svg" width="170" height="170" alt="">
       <img class="margin-bat bat-one" src="assets/halloween/bat.svg" width="38" height="20" alt="">
       <img class="margin-bat bat-two" src="assets/halloween/bat.svg" width="24" height="20" alt="">
+    </div>
+    <div class="christmas-decorations" aria-hidden="true">
+      <img class="fairy-lights" src="assets/christmas/lights.svg" width="1200" height="64" alt="">
+      <span class="snowflake" style="--x:2%;--duration:24s;--delay:-10s"></span>
+      <span class="snowflake" style="--x:96%;--duration:21s;--delay:-3s"></span>
+      <span class="snowflake" style="--x:89%;--duration:28s;--delay:-19s"></span>
+      <span class="snowflake" style="--x:5%;--duration:31s;--delay:-25s"></span>
+      <span class="snowflake" style="--x:98%;--duration:26s;--delay:-13s"></span>
+      <span class="snowflake" style="--x:92%;--duration:33s;--delay:-27s"></span>
+      <span class="snowflake" style="--x:1%;--duration:29s;--delay:-6s"></span>
+      <span class="snowflake" style="--x:94%;--duration:25s;--delay:-17s"></span>
     </div>
     <button id="menu-backdrop" class="menu-backdrop" type="button" aria-label="Close navigation" tabindex="-1" hidden></button>
 
@@ -50,23 +54,29 @@
    				<!-- Profile/logo section-->
    				<div id="profile" class="clearfix">
    					<div class="bg text-center" id="home">
-    					<img id="profile-photo" src="assets/halloween/portrait.png" data-halloween-src="assets/halloween/portrait.png" data-classic-src="voudouris25c.jpg" class="img-responsive img-circle center" width="208" height="247" alt="Alexandros Voudouris in a pumpkin-patterned suit on a Halloween porch" fetchpriority="high">
+    					<div class="season-portrait">
+              <img id="profile-photo" src="voudouris25c.jpg" data-halloween-src="assets/halloween/portrait.png" data-christmas-src="assets/christmas/portrait.png" data-classic-src="voudouris25c.jpg" class="img-responsive img-circle center" width="208" height="247" alt="Alexandros Voudouris" fetchpriority="high">
+              <span class="portrait-holly" aria-hidden="true"><img src="assets/christmas/holly.svg" width="60" height="46" alt=""></span>
+            </div>
 					</div>
 
    					<div class="title">
    						<h2><b>Alexandros Voudouris</b></h2>
 						<h3><b>Associate Professor</b></h3>
    						<h3><b>University of Southern Denmark</b></h3>
-<p class="seasonal-tagline">Algorithms, games, and other dark arts.</p>
+<p class="seasonal-tagline" id="seasonal-tagline">Algorithms, games, and a little Christmas magic.</p>
 					</div>      
    				</div>
    				<!-- /Profile/logo section-->
    				
-   				<div class="season-controls" data-needs-js>
-          <button class="season-toggle" id="season-toggle" type="button" aria-pressed="true" aria-label="Halloween mode">
-            <span class="season-toggle-label"><img src="assets/halloween/pumpkin.svg" width="18" height="18" alt="">Halloween mode</span>
-            <span class="season-toggle-track" aria-hidden="true"></span>
-          </button>
+   				<div class="profile-links" aria-label="Profile links"><a href="mailto:voudouris@imada.sdu.dk"><i class="fa fa-envelope-o" aria-hidden="true"></i>Email</a><a href="cv-voudouris.pdf"><i class="fa fa-file-text-o" aria-hidden="true"></i>CV</a><a href="https://scholar.google.com/citations?user=YL5djpEAAAAJ" target="_blank" rel="noopener noreferrer"><i class="fa fa-graduation-cap" aria-hidden="true"></i>Scholar</a></div>
+<div class="season-controls" data-needs-js>
+          <label class="season-picker-label" for="season-select">Appearance</label>
+          <select class="season-picker" id="season-select" name="appearance">
+            <option value="classic" selected>Classic</option>
+            <option value="halloween">🎃 Halloween</option>
+            <option value="christmas">🎄 Christmas</option>
+          </select>
         </div>
         <!-- Main navigation-->
    				<div id="main-nav">
@@ -138,7 +148,8 @@
    	</div>
 
 <div id="main" role="main" tabindex="-1">
-<img class="main-pumpkin" src="assets/halloween/jack-o-lantern.svg" width="132" height="148" alt="" aria-hidden="true">            
+<img class="main-pumpkin" src="assets/halloween/jack-o-lantern.svg" width="132" height="148" alt="" aria-hidden="true">
+<img class="main-tree" src="assets/christmas/tree.svg" width="132" height="158" alt="" aria-hidden="true">            
 <div id="biography" class="page home" data-pos="home">
 <div class="pagecontents">
 
@@ -148,7 +159,7 @@
 <div class="row">
 <div class="col-md-12">
 
-<p class="seasonal-caption">Halloween edition</p>
+<p class="seasonal-caption" id="seasonal-caption">Christmas edition</p><header class="page-heading"><h1>Teaching</h1></header>
 <h3><span class="label" style="background-color: #f0ad4e">Courses at University of Southern Denmark</span></h3>
         <table class="table">
 		
@@ -292,12 +303,13 @@
 </div>
 
 
-    <button class="ghost-trigger" id="ghost-trigger" type="button" aria-label="A message from the resident ghost" aria-controls="ghost-note" aria-expanded="false" data-needs-js>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M7 26V13a9 9 0 0 1 18 0v13l-4-3-5 4-5-4-4 3Z" fill="currentColor" opacity=".9"/><ellipse cx="12.5" cy="13.5" rx="1.4" ry="2" fill="#251c2b"/><ellipse cx="19.5" cy="13.5" rx="1.4" ry="2" fill="#251c2b"/><path d="M14 20q2-3 4 0" stroke="#251c2b" stroke-width="1.5" stroke-linecap="round"/></svg>
+    <button class="ghost-trigger" id="ghost-trigger" type="button" aria-label="Open a little Christmas present" aria-controls="ghost-note" aria-expanded="false" data-needs-js>
+      <svg class="ghost-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M7 26V13a9 9 0 0 1 18 0v13l-4-3-5 4-5-4-4 3Z" fill="currentColor" opacity=".9"/><ellipse cx="12.5" cy="13.5" rx="1.4" ry="2" fill="#251c2b"/><ellipse cx="19.5" cy="13.5" rx="1.4" ry="2" fill="#251c2b"/><path d="M14 20q2-3 4 0" stroke="#251c2b" stroke-width="1.5" stroke-linecap="round"/></svg>
+<svg class="gift-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M6 15h20v13H6Z" fill="currentColor" opacity=".15"/><path d="M4 10h24v6H4ZM6 16v12h20V16M16 10v18" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M16 10C4 10 8 0 13 5l3 5c12 0 8-10 3-5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
     </button>
     <div class="ghost-note" id="ghost-note" hidden>
-      <span role="status" aria-live="polite">Still waiting for Reviewer 2.</span>
-      <button class="ghost-close" id="ghost-close" type="button" aria-label="Dismiss ghost message">×</button>
+      <span id="seasonal-message" role="status" aria-live="polite">All I want for Christmas is an acceptance.</span>
+      <button class="ghost-close" id="ghost-close" type="button" aria-label="Dismiss seasonal message">×</button>
     </div>
 
 </body> 
