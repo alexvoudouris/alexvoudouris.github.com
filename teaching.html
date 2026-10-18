@@ -1,44 +1,48 @@
-<!DOCTYPE html> <html lang="en"> 
+<!DOCTYPE html> <html lang="en" data-theme="halloween"> 
 
 	<head>
-        <title>Alexandros Voudouris</title>
+        <title>Alexandros Voudouris — Teaching · Halloween edition</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">    
         <meta name="description" content="Alexandros Voudouris homepage" />
         <meta name="keywords" content="cs, algorithms, game theory, approximation, learning, social choice" />
 
        
 
-        <!--CSS styles-->
+        <!-- Local fonts and styles: no build step or external asset requests. -->
+        <link rel="stylesheet" href="css/fonts.css">
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="css/perfect-scrollbar-0.4.5.min.css">
-        <link rel="stylesheet" href="css/magnific-popup.css">
         <link rel="stylesheet" href="css/style.css">
-        <link id="theme-style" rel="stylesheet" href="css/styles/default.css">        
-        <!--/CSS styles-->
-
-	<!--Javascript files-->
-	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
-        <script type="text/javascript" src="js/TweenMax.min.js"></script>
-        <script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script>
-        <script type="text/javascript" src="js/jquery.carouFredSel-6.2.1-packed.js"></script>
-        <script type="text/javascript" src="js/modernizr.custom.63321.js"></script>
-        <script type="text/javascript" src="js/jquery.dropdownit.js"></script>
-        <script type="text/javascript" src="js/ScrollToPlugin.min.js"></script>
-        <script type="text/javascript" src="js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="js/jquery.mixitup.min.js"></script>
-        <script type="text/javascript" src="js/masonry.min.js"></script>
-        <script type="text/javascript" src="js/perfect-scrollbar-0.4.5.with-mousewheel.min.js"></script>
-        <script type="text/javascript" src="js/jquery.nicescroll.min.js"></script>
-        <script type="text/javascript" src="js/magnific-popup.js"></script>
-        <script type="text/javascript" src="js/custom.js"></script>
-        <!--/Javascript files-->
+        <link id="theme-style" rel="stylesheet" href="css/styles/default.css">
+        <link rel="stylesheet" href="css/halloween.css">
+        <link rel="icon" type="image/svg+xml" href="assets/halloween/pumpkin.svg">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#18131d">
+        <script>
+        (function () {
+            var root = document.documentElement;
+            root.classList.add('js-enabled');
+            try {
+                var saved = window.localStorage.getItem('alexvoudouris-season-theme');
+                if (saved === 'classic' || saved === 'halloween') root.dataset.theme = saved;
+            } catch (error) {}
+        })();
+        </script>
+        <script src="js/halloween.js" defer></script>
 
     </head> 
     <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="haunt-decorations" aria-hidden="true">
+      <img class="corner-web" src="assets/halloween/web.svg" width="170" height="170" alt="">
+      <img class="margin-bat bat-one" src="assets/halloween/bat.svg" width="38" height="20" alt="">
+      <img class="margin-bat bat-two" src="assets/halloween/bat.svg" width="24" height="20" alt="">
+    </div>
+    <button id="menu-backdrop" class="menu-backdrop" type="button" aria-label="Close navigation" tabindex="-1" hidden></button>
+
 
         <div id="wrapper">
-        	<a href="#sidebar" class="mobilemenu"><i class="fa fa-reorder"></i></a>
+        	<a href="#sidebar" class="mobilemenu" role="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open navigation"><i class="fa fa-reorder"></i></a>
    	
    	<div id="sidebar" >
    		<div id="sidebar-wrapper">
@@ -46,18 +50,25 @@
    				<!-- Profile/logo section-->
    				<div id="profile" class="clearfix">
    					<div class="bg text-center" id="home">
-    					<img src="voudouris25c.jpg" class="img-responsive img-circle center"  alt="Alex Voudouris" border-radius:50%>
+    					<img id="profile-photo" src="assets/halloween/portrait.png" data-halloween-src="assets/halloween/portrait.png" data-classic-src="voudouris25c.jpg" class="img-responsive img-circle center" width="208" height="247" alt="Alexandros Voudouris in a pumpkin-patterned suit on a Halloween porch" fetchpriority="high">
 					</div>
 
    					<div class="title">
    						<h2><b>Alexandros Voudouris</b></h2>
 						<h3><b>Associate Professor</b></h3>
    						<h3><b>University of Southern Denmark</b></h3>
+<p class="seasonal-tagline">Algorithms, games, and other dark arts.</p>
 					</div>      
    				</div>
    				<!-- /Profile/logo section-->
    				
-   				<!-- Main navigation-->
+   				<div class="season-controls" data-needs-js>
+          <button class="season-toggle" id="season-toggle" type="button" aria-pressed="true" aria-label="Halloween mode">
+            <span class="season-toggle-label"><img src="assets/halloween/pumpkin.svg" width="18" height="18" alt="">Halloween mode</span>
+            <span class="season-toggle-track" aria-hidden="true"></span>
+          </button>
+        </div>
+        <!-- Main navigation-->
    				<div id="main-nav">
    					<ul id="navigation">
    						<li>
@@ -75,7 +86,7 @@
    						</li> 
 
 						<li class="currentmenu">
-   							<a href="teaching.html">
+   							<a href="teaching.html" aria-current="page">
    								<i class="fa fa-mortar-board"></i>
    								<div class="text">Teaching</div>
    							</a>
@@ -126,7 +137,8 @@
    		</div>
    	</div>
 
-<div id="main">            
+<div id="main" role="main" tabindex="-1">
+<img class="main-pumpkin" src="assets/halloween/jack-o-lantern.svg" width="132" height="148" alt="" aria-hidden="true">            
 <div id="biography" class="page home" data-pos="home">
 <div class="pagecontents">
 
@@ -136,6 +148,7 @@
 <div class="row">
 <div class="col-md-12">
 
+<p class="seasonal-caption">Halloween edition</p>
 <h3><span class="label" style="background-color: #f0ad4e">Courses at University of Southern Denmark</span></h3>
         <table class="table">
 		
@@ -277,6 +290,15 @@
 </div>
 </div>
 </div>
+
+
+    <button class="ghost-trigger" id="ghost-trigger" type="button" aria-label="A message from the resident ghost" aria-controls="ghost-note" aria-expanded="false" data-needs-js>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M7 26V13a9 9 0 0 1 18 0v13l-4-3-5 4-5-4-4 3Z" fill="currentColor" opacity=".9"/><ellipse cx="12.5" cy="13.5" rx="1.4" ry="2" fill="#251c2b"/><ellipse cx="19.5" cy="13.5" rx="1.4" ry="2" fill="#251c2b"/><path d="M14 20q2-3 4 0" stroke="#251c2b" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <div class="ghost-note" id="ghost-note" hidden>
+      <span role="status" aria-live="polite">Still waiting for Reviewer 2.</span>
+      <button class="ghost-close" id="ghost-close" type="button" aria-label="Dismiss ghost message">×</button>
+    </div>
 
 </body> 
 </html>

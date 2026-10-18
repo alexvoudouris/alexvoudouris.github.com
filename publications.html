@@ -1,44 +1,48 @@
-<!DOCTYPE html> <html lang="en"> 
+<!DOCTYPE html> <html lang="en" data-theme="halloween"> 
 
 	<head>
-        <title>Alexandros Voudouris</title>
+        <title>Alexandros Voudouris — Publications · Halloween edition</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">    
         <meta name="description" content="Alexandros Voudouris homepage" />
         <meta name="keywords" content="cs, algorithms, game theory, approximation, learning, social choice" />
 
        
 
-        <!--CSS styles-->
+        <!-- Local fonts and styles: no build step or external asset requests. -->
+        <link rel="stylesheet" href="css/fonts.css">
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="css/perfect-scrollbar-0.4.5.min.css">
-        <link rel="stylesheet" href="css/magnific-popup.css">
         <link rel="stylesheet" href="css/style.css">
-        <link id="theme-style" rel="stylesheet" href="css/styles/default.css">        
-        <!--/CSS styles-->
-
-	<!--Javascript files-->
-	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
-        <script type="text/javascript" src="js/TweenMax.min.js"></script>
-        <script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script>
-        <script type="text/javascript" src="js/jquery.carouFredSel-6.2.1-packed.js"></script>
-        <script type="text/javascript" src="js/modernizr.custom.63321.js"></script>
-        <script type="text/javascript" src="js/jquery.dropdownit.js"></script>
-        <script type="text/javascript" src="js/ScrollToPlugin.min.js"></script>
-        <script type="text/javascript" src="js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="js/jquery.mixitup.min.js"></script>
-        <script type="text/javascript" src="js/masonry.min.js"></script>
-        <script type="text/javascript" src="js/perfect-scrollbar-0.4.5.with-mousewheel.min.js"></script>
-        <script type="text/javascript" src="js/jquery.nicescroll.min.js"></script>
-        <script type="text/javascript" src="js/magnific-popup.js"></script>
-        <script type="text/javascript" src="js/custom.js"></script>
-        <!--/Javascript files-->
+        <link id="theme-style" rel="stylesheet" href="css/styles/default.css">
+        <link rel="stylesheet" href="css/halloween.css">
+        <link rel="icon" type="image/svg+xml" href="assets/halloween/pumpkin.svg">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#18131d">
+        <script>
+        (function () {
+            var root = document.documentElement;
+            root.classList.add('js-enabled');
+            try {
+                var saved = window.localStorage.getItem('alexvoudouris-season-theme');
+                if (saved === 'classic' || saved === 'halloween') root.dataset.theme = saved;
+            } catch (error) {}
+        })();
+        </script>
+        <script src="js/halloween.js" defer></script>
 
     </head> 
     <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="haunt-decorations" aria-hidden="true">
+      <img class="corner-web" src="assets/halloween/web.svg" width="170" height="170" alt="">
+      <img class="margin-bat bat-one" src="assets/halloween/bat.svg" width="38" height="20" alt="">
+      <img class="margin-bat bat-two" src="assets/halloween/bat.svg" width="24" height="20" alt="">
+    </div>
+    <button id="menu-backdrop" class="menu-backdrop" type="button" aria-label="Close navigation" tabindex="-1" hidden></button>
+
 
         <div id="wrapper">
-        	<a href="#sidebar" class="mobilemenu"><i class="fa fa-reorder"></i></a>
+        	<a href="#sidebar" class="mobilemenu" role="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open navigation"><i class="fa fa-reorder"></i></a>
    	
    	<div id="sidebar" >
    		<div id="sidebar-wrapper">
@@ -46,18 +50,25 @@
    				<!-- Profile/logo section-->
    				<div id="profile" class="clearfix">
    					<div class="bg text-center" id="home">
-    					<img src="voudouris25c.jpg" class="img-responsive img-circle center"  alt="Alex Voudouris" border-radius:50%>
+    					<img id="profile-photo" src="assets/halloween/portrait.png" data-halloween-src="assets/halloween/portrait.png" data-classic-src="voudouris25c.jpg" class="img-responsive img-circle center" width="208" height="247" alt="Alexandros Voudouris in a pumpkin-patterned suit on a Halloween porch" fetchpriority="high">
 					</div>
 
    					<div class="title">
    						<h2><b>Alexandros Voudouris</b></h2>
 						<h3><b>Associate Professor</b></h3>
    						<h3><b>University of Southern Denmark</b></h3>
+<p class="seasonal-tagline">Algorithms, games, and other dark arts.</p>
 					</div>     
    				</div>
    				<!-- /Profile/logo section-->
    				
-   				<!-- Main navigation-->
+   				<div class="season-controls" data-needs-js>
+          <button class="season-toggle" id="season-toggle" type="button" aria-pressed="true" aria-label="Halloween mode">
+            <span class="season-toggle-label"><img src="assets/halloween/pumpkin.svg" width="18" height="18" alt="">Halloween mode</span>
+            <span class="season-toggle-track" aria-hidden="true"></span>
+          </button>
+        </div>
+        <!-- Main navigation-->
    				<div id="main-nav">
    					<ul id="navigation">
    						<li>
@@ -68,7 +79,7 @@
    						</li>  
    						
    						<li class="currentmenu">
-   							<a href="publications.html">
+   							<a href="publications.html" aria-current="page">
    								<i class="fa fa-book"></i>
    								<div class="text">Publications</div>
    							</a>
@@ -126,7 +137,8 @@
    		</div>
    	</div>
 
-<div id="main">            
+<div id="main" role="main" tabindex="-1">
+<img class="main-pumpkin" src="assets/halloween/jack-o-lantern.svg" width="132" height="148" alt="" aria-hidden="true">            
 <div id="biography" class="page home" data-pos="home">
 <div class="pagecontents">
 
@@ -138,6 +150,7 @@
 	
 	In this page, the publications are ordered by year. You can also see them ordered by <a href="publications-type.html">type</a>.
 
+<p class="seasonal-caption">Halloween edition</p>
 <h3> <span class="label" style="background-color: #f0ad4e"> Manuscripts </span> </h3>
 	
 	<table class="table">
@@ -149,7 +162,7 @@
                	<td>
 		    <b> Truthful two-facility location with candidate locations in metric spaces</b> <br />
                  Panagiotis Kanellopoulos, Alexandros A. Voudouris <br />
-		    [ <a href="https://arxiv.org/abs/2610.18006" target=”_blank”>arxiv</a> ]
+		    [ <a href="https://arxiv.org/abs/2610.18006" target="_blank" rel="noopener noreferrer">arxiv</a> ]
         </td>
 	</tr>
 
@@ -160,7 +173,7 @@
                	<td>
 		    <b> The distortion of threshold approval multiwinner voting</b> <br />
                  Mohamad Latifian, Marzieh Nilipour, Alexandros A. Voudouris <br />
-		    [ <a href="https://arxiv.org/abs/2610.13725" target=”_blank”>arxiv</a> ]
+		    [ <a href="https://arxiv.org/abs/2610.13725" target="_blank" rel="noopener noreferrer">arxiv</a> ]
         </td>
 	</tr>
 
@@ -171,7 +184,7 @@
                	<td>
 		    <b> Optimal rank lotteries for truthful unit-interval covering </b> <br />
                  Alexandros A. Voudouris <br />
-		    [ <a href="https://arxiv.org/abs/2608.24193" target=”_blank”>arxiv</a> ]
+		    [ <a href="https://arxiv.org/abs/2608.24193" target="_blank" rel="noopener noreferrer">arxiv</a> ]
             	</td>
 	</tr>
 
@@ -182,7 +195,7 @@
                	<td>
 		    <b> Group-fair metric distortion of facility assignment problems </b> <br />
                  Alexandros A. Voudouris <br />
-		    [ <a href="https://arxiv.org/abs/2608.16252" target=”_blank”>arxiv</a> ]
+		    [ <a href="https://arxiv.org/abs/2608.16252" target="_blank" rel="noopener noreferrer">arxiv</a> ]
             	</td>
 	</tr>
 
@@ -193,7 +206,7 @@
                	<td>
 		    <b> Discrete truthful heterogeneous two-facility location: The line and beyond</b> <br />
                  Panagiotis Kanellopoulos, Alexandros A. Voudouris <br />
-		    [ <a href="https://arxiv.org/abs/2607.21046" target=”_blank”>arxiv</a> ]
+		    [ <a href="https://arxiv.org/abs/2607.21046" target="_blank" rel="noopener noreferrer">arxiv</a> ]
             	</td>
 	</tr>
 
@@ -204,7 +217,7 @@
                	<td>
 		    <b> Metric facility assignment with partial information</b> <br />
                  Vasilis Gkatzelis, Hasti Karimi, Emma Rewinski, Maziar Shamsipour, Alexandros A. Voudouris <br />
-		    [ <a href="https://arxiv.org/abs/2606.05905" target=”_blank”>arxiv</a> ]
+		    [ <a href="https://arxiv.org/abs/2606.05905" target="_blank" rel="noopener noreferrer">arxiv</a> ]
             	</td>
 	</tr>
 
@@ -215,7 +228,7 @@
                	<td>
 		    <b> Approximate-EFX allocations with ordinal and limited cardinal information</b> <br />
                  Aris Filos-Ratsikas, Georgios Kalantzis, Alexandros A. Voudouris <br />
-		    [ <a href="https://arxiv.org/abs/2602.08714" target=”_blank”>arxiv</a> ]
+		    [ <a href="https://arxiv.org/abs/2602.08714" target="_blank" rel="noopener noreferrer">arxiv</a> ]
             	</td>
 	</tr>
 
@@ -269,7 +282,7 @@
 		    <b> Utilitarian distortion with predictions </b> <br />
                 Aris Filos-Ratsikas, Georgios Kalantzis, Alexandros A. Voudouris <br />
 		    <i>Artificial Intelligence</i>, volume 357, article 104557, 2026 <br />
-		    [ <a href="https://doi.org/10.1016/j.artint.2026.104557" target=”_blank”>aij paper</a> ]
+		    [ <a href="https://doi.org/10.1016/j.artint.2026.104557" target="_blank" rel="noopener noreferrer">aij paper</a> ]
             	</td>
 	</tr>
 
@@ -281,7 +294,7 @@
 		    <b> Constrained truthful obnoxious two-facility location with optional preferences</b> <br />
                     Panagiotis Kanellopoulos and Alexandros A. Voudouris <br />
 		    <i>Algorithmica</i>, volume 88, article 42, 2026 <br />
-		    [ <a href="https://doi.org/10.1007/s00453-026-01391-7" target=”_blank”>algorithmica paper</a> ]
+		    [ <a href="https://doi.org/10.1007/s00453-026-01391-7" target="_blank" rel="noopener noreferrer">algorithmica paper</a> ]
             	</td>
 		</tr>
 
@@ -293,7 +306,7 @@
 		    <b> Metric distortion under group-fair objectives</b> <br />
             Georgios Amanatidis, Elliot Anshelevich, Christopher Jerrett, and Alexandros A. Voudouris <br />
 		    <i>Autonomous Agents and Multi-Agent Systems</i>, volume 40, article 14, 2026 <br />
-		    [ <a href="https://doi.org/10.1007/s10458-026-09742-y" target=”_blank”>jaamas paper</a> ]
+		    [ <a href="https://doi.org/10.1007/s10458-026-09742-y" target="_blank" rel="noopener noreferrer">jaamas paper</a> ]
         </td>
 	</tr>
 
@@ -305,7 +318,7 @@
 		    <b> Network allocation games with anonymous preferences</b> <br />
                 Argyrios Deligkas, Eduard Eiben, Šimon Schierreich, Alexandros A. Voudouris <br />
 		    <i>19th International Symposium on Algorithmic Game Theory (SAGT)</i>, 2026 <br />
-		    [ <a href="https://doi.org/10.1007/978-3-032-38782-0_7" target=”_blank”>sagt paper</a> | <a href="https://arxiv.org/abs/2607.23248" target=”_blank”>arxiv</a> ]
+		    [ <a href="https://doi.org/10.1007/978-3-032-38782-0_7" target="_blank" rel="noopener noreferrer">sagt paper</a> | <a href="https://arxiv.org/abs/2607.23248" target="_blank" rel="noopener noreferrer">arxiv</a> ]
             	</td>
 		</tr>
 
@@ -317,7 +330,7 @@
 		    <b> Distributed agent-constrained truthful facility location</b> <br />
                  Argyrios Deligkas, Panagiotis Kanellopoulos, Alexandros A. Voudouris <br />
 			<i>19th International Symposium on Algorithmic Game Theory (SAGT)</i>, 2026 <br />
-		    [ <a href="https://doi.org/10.1007/978-3-032-38782-0_8" target=”_blank”>sagt paper</a> | <a href="https://arxiv.org/abs/2601.15258" target=”_blank”>arxiv</a> ]
+		    [ <a href="https://doi.org/10.1007/978-3-032-38782-0_8" target="_blank" rel="noopener noreferrer">sagt paper</a> | <a href="https://arxiv.org/abs/2601.15258" target="_blank" rel="noopener noreferrer">arxiv</a> ]
             	</td>
 	</tr>
 		
@@ -335,7 +348,7 @@
 		    <b> The distortion of threshold approval matching</b> <br />
                  Mohamad Latifian and Alexandros A. Voudouris <br />
 		    <i> Autonomous Agents and Multi-Agent Systems</i>, volume 39, article 42, 2025 <br />
-		    [ <a href="https://doi.org/10.1007/s10458-025-09724-6" target=”_blank”>jaamas paper</a> ]
+		    [ <a href="https://doi.org/10.1007/s10458-025-09724-6" target="_blank" rel="noopener noreferrer">jaamas paper</a> ]
             	</td>
 	</tr>
 
@@ -347,7 +360,7 @@
 		    <b> The price of EF1 for few agents with additive ternary valuations</b> <br />
                     Maria Kyropoulou and Alexandros A. Voudouris <br />
 		    <i>Operations Research Letters</i>, volume 63, article 107351, 2025 <br />
-		    [ <a href="https://doi.org/10.1016/j.orl.2025.107351" target="_blank">orl paper</a> | <a href="https://arxiv.org/abs/2508.09869" target=”_blank”>arxiv</a>]
+		    [ <a href="https://doi.org/10.1016/j.orl.2025.107351" target="_blank">orl paper</a> | <a href="https://arxiv.org/abs/2508.09869" target="_blank" rel="noopener noreferrer">arxiv</a>]
             	</td>
 	</tr>
 
@@ -360,7 +373,7 @@
 		    <b> Diversity-seeking jump games in networks</b> <br />
                     Lata Narayanan, Yasaman Sabbagh, and Alexandros A. Voudouris <br />
 		    <i>Autonomous Agents and Multi-Agent Systems</i>, volume 39, article 32, 2025 <br />
-		    [ <a href="https://doi.org/10.1007/s10458-025-09714-8" target="_blank">jaamas paper</a> | <a href="https://arxiv.org/abs/2305.17757" target=”_blank”>arxiv</a> ]
+		    [ <a href="https://doi.org/10.1007/s10458-025-09714-8" target="_blank">jaamas paper</a> | <a href="https://arxiv.org/abs/2305.17757" target="_blank" rel="noopener noreferrer">arxiv</a> ]
             	</td>
 	</tr>
 
@@ -372,7 +385,7 @@
 		    <b>Mechanism design with predictions for facility location games with candidate locations</b> <br />
                     Jiazhu Fang, Qizhi Fang, Wenjing Liu, Qingqin Nong, Alexandros A. Voudouris<br />
 		     <i>Journal of Combinatorial Optimization</i>, volume 49, article 74, 2025 <br />
-		    [ <a href="https://doi.org/10.1007/s10878-025-01310-6" target=”_blank”>joco paper</a> ]
+		    [ <a href="https://doi.org/10.1007/s10878-025-01310-6" target="_blank" rel="noopener noreferrer">joco paper</a> ]
             	</td>
 	</tr>
 
@@ -385,7 +398,7 @@
 		    <b>Improved metric distortion via threshold approvals</b> <br />
                     Elliot Anshelevich, Aris Filos-Ratsikas, Christopher Jerrett, Alexandros A. Voudouris<br />
 		     <i>Artificial Intelligence</i>, volume 341, article 104295, 2025 <br />
-		    [ <a href="https://doi.org/10.1016/j.artint.2025.104295" target=”_blank”>aij paper</a> ]
+		    [ <a href="https://doi.org/10.1016/j.artint.2025.104295" target="_blank" rel="noopener noreferrer">aij paper</a> ]
             	</td>
 	</tr>
 
@@ -397,7 +410,7 @@
 		    <b> Metric distortion of obnoxious distributed voting</b> <br />
                     Alexandros A. Voudouris <br />
 		    <i>Information Processing Letters</i>, volume 189, article 106559, 2025 <br />
-		    [ <a href="https://doi.org/10.1016/j.ipl.2025.106559" target=”_blank”>ipl paper</a> | <a href="https://arxiv.org/abs/2412.11492" target=”_blank”>arxiv</a> ]
+		    [ <a href="https://doi.org/10.1016/j.ipl.2025.106559" target="_blank" rel="noopener noreferrer">ipl paper</a> | <a href="https://arxiv.org/abs/2412.11492" target="_blank" rel="noopener noreferrer">arxiv</a> ]
             	</td>
 	</tr>
 
@@ -409,7 +422,7 @@
 		    <b> Agent-constrained truthful facility location games</b> <br />
                     Argyrios Deligkas, Mohammad Lotfi, and Alexandros A. Voudouris <br />
 		    <i>Journal of Combinatorial Optimization</i>, volume 49, article 24, 2025 <br />
-		    [ <a href="https://doi.org/10.1007/s10878-025-01258-7" target=”_blank”>joco paper</a> ]
+		    [ <a href="https://doi.org/10.1007/s10878-025-01258-7" target="_blank" rel="noopener noreferrer">joco paper</a> ]
             	</td>
 	</tr>
 
@@ -421,7 +434,7 @@
 		    <b>Truthful two-facility location with candidate locations</b> <br />
                     Panagiotis Kanellopoulos, Alexandros A. Voudouris, and Rongsen Zhang <br />
 		    <i>Theoretical Computer Science</i>, volume 1024, article 114913, 2025  <br />
-		    [ <a href="https://doi.org/10.1016/j.tcs.2024.114913" target=”_blank”>tcs paper</a> ]
+		    [ <a href="https://doi.org/10.1016/j.tcs.2024.114913" target="_blank" rel="noopener noreferrer">tcs paper</a> ]
             	</td>
 	</tr>
 
@@ -433,7 +446,7 @@
 		    <b> Truthful facility location with candidate locations and limited resources</b> <br />
                     Panagiotis Kanellopoulos and Alexandros A. Voudouris <br />
 		    <i>28th European Conference on Artificial Intelligence (ECAI)</i>, 2025 <br />
-		    [ <a href="https://doi.org/10.3233/FAIA250957" target="_blank">ecai paper</a> | <a href="https://arxiv.org/abs/2505.03391" target=”_blank”>arxiv</a> ]
+		    [ <a href="https://doi.org/10.3233/FAIA250957" target="_blank">ecai paper</a> | <a href="https://arxiv.org/abs/2505.03391" target="_blank" rel="noopener noreferrer">arxiv</a> ]
             	</td>
 		</tr>
 
@@ -445,7 +458,7 @@
 		    <b> Constrained truthful obnoxious two-facility location with optional preferences</b> <br />
                     Panagiotis Kanellopoulos and Alexandros A. Voudouris <br />
 		    <i>18th International Symposium on Algorithmic Game Theory (SAGT)</i>, 2025 <br />
-		    [ <a href="https://doi.org/10.1007/978-3-032-03639-1_8" target=”_blank”>sagt paper</a> | <a href="https://arxiv.org/abs/2410.16131" target=”_blank”>arxiv</a> ]
+		    [ <a href="https://doi.org/10.1007/978-3-032-03639-1_8" target="_blank" rel="noopener noreferrer">sagt paper</a> | <a href="https://arxiv.org/abs/2410.16131" target="_blank" rel="noopener noreferrer">arxiv</a> ]
             	</td>
 		</tr>
 		
@@ -457,7 +470,7 @@
 		    <b> Metric distortion under group-fair objectives</b> <br />
                     Georgios Amanatidis, Elliot Anshelevich, Christopher Jerrett, and Alexandros A. Voudouris <br />
 		    <i>18th International Symposium on Algorithmic Game Theory (SAGT)</i>, 2025 <br />
-		    [ <a href="https://doi.org/10.1007/978-3-032-03639-1_25" target=”_blank”>sagt paper</a> | <a href="https://arxiv.org/abs/2404.14180" target=”_blank”>arxiv</a> ]
+		    [ <a href="https://doi.org/10.1007/978-3-032-03639-1_25" target="_blank" rel="noopener noreferrer">sagt paper</a> | <a href="https://arxiv.org/abs/2404.14180" target="_blank" rel="noopener noreferrer">arxiv</a> ]
             	</td>
 		</tr>
 
@@ -469,7 +482,7 @@
 		    <b> Utilitarian distortion with predictions </b> <br />
                     Aris Filos-Ratsikas, Georgios Kalantzis, Alexandros A. Voudouris <br />
 		    <i>26th ACM Conference on Economics and Computation (EC)</i>, 2025 <br />
-		    [ <a href="https://doi.org/10.1145/3736252.3742526" target=”_blank”>ec paper</a> | <a href="https://arxiv.org/abs/2502.06489" target=”_blank”>arxiv</a> ]
+		    [ <a href="https://doi.org/10.1145/3736252.3742526" target="_blank" rel="noopener noreferrer">ec paper</a> | <a href="https://arxiv.org/abs/2502.06489" target="_blank" rel="noopener noreferrer">arxiv</a> ]
             	</td>
 		</tr>
 
@@ -481,7 +494,7 @@
 		    <b> Optimal metric distortion for matching on the line </b> <br />
                     Aris Filos-Ratsikas, Vasilis Gkatzelis, Mohamad Latifian, Emma Rewinski, Alexandros A. Voudouris <br />
 		    <i>34th International Joint Conference on Artificial Intelligence (IJCAI)</i>, 2025 <br />
-		    [ <a href="https://doi.org/10.24963/ijcai.2025/429" target="_blank">ijcai paper</a> | <a href="https://arxiv.org/abs/2502.00149" target=”_blank”>arxiv</a> ]
+		    [ <a href="https://doi.org/10.24963/ijcai.2025/429" target="_blank">ijcai paper</a> | <a href="https://arxiv.org/abs/2502.00149" target="_blank" rel="noopener noreferrer">arxiv</a> ]
             	</td>
 	</tr>
 
@@ -493,7 +506,7 @@
 		    <b> Variety-seeking jump games on graphs </b> <br />
                     Lata Narayanan, Jaroslav Opatrny, Shanmukha Tummala, Alexandros A. Voudouris <br />
 		    <i>34th International Joint Conference on Artificial Intelligence (IJCAI)</i>, 2025 <br />
-		    [ <a href="https://doi.org/10.24963/ijcai.2025/446" target="_blank">ijcai paper</a> | <a href="https://arxiv.org/abs/2505.10005" target=”_blank”>arxiv</a> ]
+		    [ <a href="https://doi.org/10.24963/ijcai.2025/446" target="_blank">ijcai paper</a> | <a href="https://arxiv.org/abs/2505.10005" target="_blank" rel="noopener noreferrer">arxiv</a> ]
             	</td>
 	</tr>
 
@@ -505,7 +518,7 @@
                	<b> Special Issue on Economics and Computation </b> <br />
 		   Argyrios Deligkas, Aris Filos-Ratsikas, and Alexandros A. Voudouris <br />
 		    <i>Information Processing Letters</i>, 2025 <br />
-		    [ <a href="https://www.sciencedirect.com/special-issue/10JMM4DDRWT" target=”_blank”>ipl special issue</a> | <a href="https://doi.org/10.1016/j.ipl.2025.106578" target=”_blank”> editorial</a> ]
+		    [ <a href="https://www.sciencedirect.com/special-issue/10JMM4DDRWT" target="_blank" rel="noopener noreferrer">ipl special issue</a> | <a href="https://doi.org/10.1016/j.ipl.2025.106578" target="_blank" rel="noopener noreferrer"> editorial</a> ]
             	</td>
 	</tr>
 
@@ -523,7 +536,7 @@
 		    <b>Truthful interval covering</b> <br />
                     Argyrios Deligkas, Aris Filos-Ratsikas, and Alexandros A. Voudouris <br />
 		    <i>Autonomous Agents and Multi-Agent Systems</i>, volume 38, article 41, 2024<br />
-		    [ <a href="https://doi.org/10.1007/s10458-024-09673-6" target=”_blank”>jaamas paper</a> ]
+		    [ <a href="https://doi.org/10.1007/s10458-024-09673-6" target="_blank" rel="noopener noreferrer">jaamas paper</a> ]
             	</td>
 	</tr>
 
@@ -535,7 +548,7 @@
 		    <b>Revisiting the distortion of distributed voting</b> <br />
                     Aris Filos-Ratsikas and Alexandros A. Voudouris <br />
 		     <i>Theory of Computing Systems</i>, volume 68, pages 1138–1159, 2024 <br />
-		    [ <a href="https://doi.org/10.1007/s00224-024-10171-1" target=”_blank”>tocs paper</a> ]
+		    [ <a href="https://doi.org/10.1007/s00224-024-10171-1" target="_blank" rel="noopener noreferrer">tocs paper</a> ]
             	</td>
 	</tr>
 
@@ -547,7 +560,7 @@
                	<b> The distortion of distributed facility location </b> <br />
                      Aris Filos-Ratsikas, Panagiotis Kanellopoulos, Alexandros A. Voudouris, and Rongsen Zhang <br />
 		     <i>Artificial Intelligence</i>, volume 328, article 104066, 2024 <br />
-                     [ <a href="https://doi.org/10.1016/j.artint.2024.104066" target=”_blank”>aij paper</a> ]
+                     [ <a href="https://doi.org/10.1016/j.artint.2024.104066" target="_blank" rel="noopener noreferrer">aij paper</a> ]
             	</td>
 	</tr>
 
@@ -559,7 +572,7 @@
                	<b> On truthful constrained heterogeneous facility location with max-variant cost </b> <br />
                      Mohammad Lotfi and Alexandros A. Voudouris <br />
 		     <i>Operations Research Letters</i>, volume 52, article 107060, 2024 <br />
-                     [ <a href="https://doi.org/10.1016/j.orl.2023.107060" target=”_blank”>orl paper</a> | <a href="https://arxiv.org/abs/2309.05379" target=”_blank”>arxiv</a> ]
+                     [ <a href="https://doi.org/10.1016/j.orl.2023.107060" target="_blank" rel="noopener noreferrer">orl paper</a> | <a href="https://arxiv.org/abs/2309.05379" target="_blank" rel="noopener noreferrer">arxiv</a> ]
             	</td>
 	</tr>
 
@@ -571,7 +584,7 @@
                	<b> Don't roll the dice, ask twice: The two-query distortion of matching problems and beyond </b> <br />
                      Georgios Amanatidis, Georgios Birmpas, Aris Filos-Ratsikas, and Alexandros A. Voudouris <br />
 		     <i>SIAM Journal on Discrete Mathematics</i>, volume 38(1), pages 1007-1029, 2024 <br />
-                     [ <a href="https://doi.org/10.1137/23M1545677" target=”_blank”>sidma paper</a> ]
+                     [ <a href="https://doi.org/10.1137/23M1545677" target="_blank" rel="noopener noreferrer">sidma paper</a> ]
             	</td>
 	</tr>
 
@@ -583,7 +596,7 @@
                	<b> Truthful ownership transfer with expert advice </b> <br />
 		 	Ioannis Caragiannis, Aris Filos-Ratsikas, Swaprava Nath, and Alexandros A. Voudouris <br />
                         <i>Mathematical Programming</i>, volume 203, pages 871-900, 2024<br />
-		        [ <a href="https://doi.org/10.1007/s10107-022-01834-3" target=”_blank”>mapr paper</a> | <a href="https://arxiv.org/abs/1802.01308" target=”_blank”>arxiv</a> ]
+		        [ <a href="https://doi.org/10.1007/s10107-022-01834-3" target="_blank" rel="noopener noreferrer">mapr paper</a> | <a href="https://arxiv.org/abs/1802.01308" target="_blank" rel="noopener noreferrer">arxiv</a> ]
             	</td>
 	</tr>
 
@@ -595,7 +608,7 @@
 		    <b> Agent-constrained truthful facility location games</b> <br />
                     Argyrios Deligkas, Mohammad Lotfi, and Alexandros A. Voudouris <br />
 		    <i> 17th International Symposium on Algorithmic Game Theory (SAGT)</i>, 2024 <br />
-		    [ <a href="https://doi.org/10.1007/978-3-031-71033-9_8" target=”_blank”>sagt paper</a> | <a href="https://arxiv.org/abs/2405.05197" target=”_blank”>arxiv</a> ]
+		    [ <a href="https://doi.org/10.1007/978-3-031-71033-9_8" target="_blank" rel="noopener noreferrer">sagt paper</a> | <a href="https://arxiv.org/abs/2405.05197" target="_blank" rel="noopener noreferrer">arxiv</a> ]
             	</td>
 	</tr>
 
@@ -607,7 +620,7 @@
 		    <b> The distortion of threshold approval matching</b> <br />
                     Mohamad Latifian and Alexandros A. Voudouris <br />
 		    <i> 33rd International Joint Conference on Artificial Intelligence (IJCAI)</i>, 2024 <br />
-		    [ <a href="https://doi.org/10.24963/ijcai.2024/316" target=”_blank”>ijcai paper</a> | <a href="https://arxiv.org/abs/2401.09858" target=”_blank”>arxiv</a> ]
+		    [ <a href="https://doi.org/10.24963/ijcai.2024/316" target="_blank" rel="noopener noreferrer">ijcai paper</a> | <a href="https://arxiv.org/abs/2401.09858" target="_blank" rel="noopener noreferrer">arxiv</a> ]
             	</td>
 	</tr>
 
@@ -619,7 +632,7 @@
 		    <b>Truthful interval covering</b> <br />
                     Argyrios Deligkas, Aris Filos-Ratsikas and Alexandros A. Voudouris <br />
 		    <i> 33rd International Joint Conference on Artificial Intelligence (IJCAI)</i>, 2024 <br />
-		    [ <a href="https://doi.org/10.24963/ijcai.2024/307" target=”_blank”>ijcai paper</a> | <a href="https://arxiv.org/abs/2309.05377">arxiv</a> ]
+		    [ <a href="https://doi.org/10.24963/ijcai.2024/307" target="_blank" rel="noopener noreferrer">ijcai paper</a> | <a href="https://arxiv.org/abs/2309.05377">arxiv</a> ]
             	</td>
 	</tr>
 
@@ -631,7 +644,7 @@
 		    <b>Improved metric distortion via threshold approvals</b> <br />
                     Elliot Anshelevich, Aris Filos-Ratsikas, Christopher Jerrett, Alexandros A. Voudouris<br />
 		     <i> 38th AAAI Conference on Artificial Intelligence (AAAI)</i>, 2024 <br />
-		    [ <a href="https://doi.org/10.1609/aaai.v38i9.28800" target=”_blank”>aaai paper</a> | <a href="https://arxiv.org/abs/2305.14024">arxiv</a> ]
+		    [ <a href="https://doi.org/10.1609/aaai.v38i9.28800" target="_blank" rel="noopener noreferrer">aaai paper</a> | <a href="https://arxiv.org/abs/2305.14024">arxiv</a> ]
             	</td>
 	</tr>
 
@@ -649,7 +662,7 @@
                	<b> Not all strangers are the same: The impact of tolerance in Schelling games </b> <br />
 		 	Panagiotis Kanellopoulos, Maria Kyropoulou, and Alexandros A. Voudouris <br />
 			<i>Theoretical Computer Science</i>, volume 971, article 114065, 2023 <br />
-                        [ <a href="https://doi.org/10.1016/j.tcs.2023.114065" target=”_blank”>tcs paper</a> ]
+                        [ <a href="https://doi.org/10.1016/j.tcs.2023.114065" target="_blank" rel="noopener noreferrer">tcs paper</a> ]
             	</td>
 	</tr>
 	
@@ -661,7 +674,7 @@
 		    <b> Fair division of indivisible goods: Recent progress and open questions </b> <br />
                      Georgios Amanatidis, Haris Aziz, Georgios Birmpas, Aris Filos-Ratsikas, Bo Li, Hervé Moulin, Alexandros A. Voudouris, Xiaowei Wu <br />
 		     <i>Artificial Intelligence</i>, volume 322, article 103965, 2023 <br />
-		     [ <a href="https://doi.org/10.1016/j.artint.2023.103965" target=”_blank”>aij paper</a> | <a href="https://arxiv.org/abs/2208.08782" target=”_blank”>arxiv</a> ]
+		     [ <a href="https://doi.org/10.1016/j.artint.2023.103965" target="_blank" rel="noopener noreferrer">aij paper</a> | <a href="https://arxiv.org/abs/2208.08782" target="_blank" rel="noopener noreferrer">arxiv</a> ]
             	</td>
 	</tr>		
 		
@@ -673,7 +686,7 @@
 		    <b> Tight distortion bounds for distributed metric voting on a line </b> <br />
                      Alexandros A. Voudouris <br />
 		     <i>Operations Research Letters</i>, volume 51(3), pages 266-269, 2023 <br />
-		     [ <a href="https://doi.org/10.1016/j.orl.2023.03.004" target=”_blank”>orl paper</a> | <a href="https://arxiv.org/abs/2301.01742" target=”_blank”>arxiv</a> ]
+		     [ <a href="https://doi.org/10.1016/j.orl.2023.03.004" target="_blank" rel="noopener noreferrer">orl paper</a> | <a href="https://arxiv.org/abs/2301.01742" target="_blank" rel="noopener noreferrer">arxiv</a> ]
             	</td>
 	</tr>		
 		
@@ -685,7 +698,7 @@
                	<b> Heterogeneous facility location with limited resources </b> <br />
 		    Argyrios Deligkas, Aris Filos-Ratsikas, and Alexandros A. Voudouris <br />
 		    <i>Games and Economic Behavior</i>, volume 139, pages 200-215, 2023 <br />
-		    [ <a href="https://doi.org/10.1016/j.geb.2023.03.001" target=”_blank”>geb paper</a> ]
+		    [ <a href="https://doi.org/10.1016/j.geb.2023.03.001" target="_blank" rel="noopener noreferrer">geb paper</a> ]
             	</td>
 	</tr>
 	
@@ -697,7 +710,7 @@
                	<b> On discrete truthful heterogeneous two-facility location </b> <br />
 		 	Panagiotis Kanellopoulos, Alexandros A. Voudouris, and Rongsen Zhang <br />
 			<i>SIAM Journal on Discrete Mathematics</i>, volume 37(2), pages 779-799, 2023 <br />
-			[ <a href="https://doi.org/10.1137/22M149908X" target=”_blank”>sidma paper</a> ]
+			[ <a href="https://doi.org/10.1137/22M149908X" target="_blank" rel="noopener noreferrer">sidma paper</a> ]
             	</td>
 	</tr>
 
@@ -709,7 +722,7 @@
 		    <b>Truthful two-facility location with candidate locations</b> <br />
                     Panagiotis Kanellopoulos, Alexandros A. Voudouris, and Rongsen Zhang <br />
 		     <i> 16th International Symposium on Algorithmic Game Theory (SAGT)</i>, 2023 <br />
-		    [ <a href="https://doi.org/10.1007/978-3-031-43254-5_21" target=”_blank”>sagt paper</a> | <a href="https://arxiv.org/abs/2305.07525" target=”_blank”>arxiv</a> ]
+		    [ <a href="https://doi.org/10.1007/978-3-031-43254-5_21" target="_blank" rel="noopener noreferrer">sagt paper</a> | <a href="https://arxiv.org/abs/2305.07525" target="_blank" rel="noopener noreferrer">arxiv</a> ]
             	</td>
 	</tr>
 		
@@ -721,7 +734,7 @@
 		    <b>Settling the distortion of distributed facility location</b> <br />
                     Aris Filos-Ratsikas, Panagiotis Kanellopoulos, Alexandros A. Voudouris, and Rongsen Zhang <br />
 		     <i> 22nd International Conference on Autonomous Agents and Multiagent Systems (AAMAS)</i>, 2023 <br />
-		    [ <a href="https://dl.acm.org/doi/10.5555/3545946.3598889" target=”_blank”>aamas paper</a> | <a href="https://arxiv.org/abs/2301.01604" target=”_blank”>arxiv</a> ]
+		    [ <a href="https://dl.acm.org/doi/10.5555/3545946.3598889" target="_blank" rel="noopener noreferrer">aamas paper</a> | <a href="https://arxiv.org/abs/2301.01604" target="_blank" rel="noopener noreferrer">arxiv</a> ]
             	</td>
 	</tr>
 		
@@ -733,7 +746,7 @@
 		    <b>Revisiting the distortion of distributed voting</b> <br />
                     Aris Filos-Ratsikas and Alexandros A. Voudouris <br />
 		     <i> 22nd International Conference on Autonomous Agents and Multiagent Systems (AAMAS)</i>, 2023 <br />
-		    [ <a href="https://dl.acm.org/doi/10.5555/3545946.3598789" target=”_blank”>aamas paper</a> | <a href="https://arxiv.org/abs/2301.03279" target=”_blank”>arxiv</a> ]
+		    [ <a href="https://dl.acm.org/doi/10.5555/3545946.3598789" target="_blank" rel="noopener noreferrer">aamas paper</a> | <a href="https://arxiv.org/abs/2301.03279" target="_blank" rel="noopener noreferrer">arxiv</a> ]
             	</td>
 	</tr>
 
@@ -745,7 +758,7 @@
                	<b> Special Issue on Algorithmic Game Theory (SAGT 2022) </b> <br />
 		    Panagiotis Kanellopoulos, Maria Kyropoulou, and Alexandros A. Voudouris <br />
 		    <i>Theoretical Computer Science</i>, 2023 <br />
-		    [ <a href="https://www.sciencedirect.com/special-issue/10SWS7RM5HF" target=”_blank”>tcs special issue</a> ]
+		    [ <a href="https://www.sciencedirect.com/special-issue/10SWS7RM5HF" target="_blank" rel="noopener noreferrer">tcs special issue</a> ]
             	</td>
 	</tr>
 	
@@ -763,7 +776,7 @@
                	<b> The metric distortion of multiwinner voting </b> <br />
 		 	Ioannis Caragiannis, Nisarg Shah, and Alexandros A. Voudouris <br />
                         <i>Artificial Intelligence</i>, volume 313, article 103802, 2022 <br />
-			[ <a href="https://doi.org/10.1016/j.artint.2022.103802" target=”_blank”>aij paper</a> ]
+			[ <a href="https://doi.org/10.1016/j.artint.2022.103802" target="_blank" rel="noopener noreferrer">aij paper</a> ]
             	</td>
 	</tr>
 	
@@ -775,7 +788,7 @@
                	<b>Multi-Agent Systems for Computational Economics and Finance</b> <br />
 		Michael Kampouridis, Panagiotis Kanellopoulos, Maria Kyropoulou, Themistoklis Melissourgos, and Alexandros A. Voudouris <br />
 		<i>AI Communications</i>, volume 35(4), pages 369-380, 2022 <br />
-		[ <a href="https://doi.org/10.3233/AIC-220117" target=”_blank”>ai-comm paper</a> ]
+		[ <a href="https://doi.org/10.3233/AIC-220117" target="_blank" rel="noopener noreferrer">ai-comm paper</a> ]
             	</td>
 	</tr>
 		
@@ -787,7 +800,7 @@
 		    <b> The distortion of distributed metric social choice </b> <br />
                      Elliot Anshelevich, Aris Filos-Ratsikas, and Alexandros A. Voudouris <br />
 		    <i>Artificial Intelligence</i>, volume 308, article 103713, 2022 <br />
-		    [ <a href="https://doi.org/10.1016/j.artint.2022.103713" target=”_blank”>aij paper</a> ]
+		    [ <a href="https://doi.org/10.1016/j.artint.2022.103713" target="_blank" rel="noopener noreferrer">aij paper</a> ]
             	</td>
 	</tr>
 	
@@ -799,7 +812,7 @@
 		    <b> A few queries go a long way: Information-distortion tradeoffs in matching </b> <br />
                      Georgios Amanatidis, Georgios Birmpas, Aris Filos-Ratsikas, and Alexandros A. Voudouris <br />
 		    <i>Journal of Artificial Intelligence Research</i>, volume 74, pages 227-261, 2022 <br />
-		    [ <a href="https://doi.org/10.1613/jair.1.12690" target=”_blank”>jair paper</a> ]
+		    [ <a href="https://doi.org/10.1613/jair.1.12690" target="_blank" rel="noopener noreferrer">jair paper</a> ]
             	</td>
 	</tr>
 		
@@ -811,7 +824,7 @@
                	<b> Bounding the inefficiency of compromise in opinion formation </b> <br />
 		    Ioannis Caragiannis, Panagiotis Kanellopoulos, and Alexandros A. Voudouris <br />
 		    <i> Algorithmica</i>, volume 84, pages 234–271, 2022<br />
-		    [ <a href="https://doi.org/10.1007/s00453-021-00892-x" target=”_blank”>algo paper</a> ]
+		    [ <a href="https://doi.org/10.1007/s00453-021-00892-x" target="_blank" rel="noopener noreferrer">algo paper</a> ]
             	</td>
 	</tr>
 	
@@ -823,7 +836,7 @@
 		    <b> Don't roll the dice, ask twice: The two-query distortion of matching problems and beyond </b> <br />
                      Georgios Amanatidis, Georgios Birmpas, Aris Filos-Ratsikas, and Alexandros A. Voudouris <br />
 		     <i> 36th Conference on Neural Information Processing Systems (NeurIPS)</i>, 2022 <br />
-		    [ <a href="https://proceedings.neurips.cc//paper_files/paper/2022/hash/c5ec22711f3a4a2f4a0a8ffd92167190-Abstract-Conference.html" target=”_blank”>neurips paper</a> | <a href="https://arxiv.org/abs/2203.01872" target=”_blank”>arxiv</a> ]
+		    [ <a href="https://proceedings.neurips.cc//paper_files/paper/2022/hash/c5ec22711f3a4a2f4a0a8ffd92167190-Abstract-Conference.html" target="_blank" rel="noopener noreferrer">neurips paper</a> | <a href="https://arxiv.org/abs/2203.01872" target="_blank" rel="noopener noreferrer">arxiv</a> ]
             	</td>
 	</tr>	
 		
@@ -835,7 +848,7 @@
                	<b> Not all strangers are the same: The impact of tolerance in Schelling games </b> <br />
 		 	Panagiotis Kanellopoulos, Maria Kyropoulou, and Alexandros A. Voudouris <br />
 			<i> 47th International Symposium on Mathematical Foundations of Computer Science (MFCS)</i>, 2022 <br />
-                        [ <a href="https://doi.org/10.4230/LIPIcs.MFCS.2022.60" target=”_blank”>mfcs paper</a> | <a href="https://arxiv.org/abs/2105.02699" target=”_blank”>arxiv</a> ]
+                        [ <a href="https://doi.org/10.4230/LIPIcs.MFCS.2022.60" target="_blank" rel="noopener noreferrer">mfcs paper</a> | <a href="https://arxiv.org/abs/2105.02699" target="_blank" rel="noopener noreferrer">arxiv</a> ]
             	</td>
 		</tr>
 		
@@ -847,7 +860,7 @@
                	<b> On discrete truthful heterogeneous two-facility location </b> <br />
 		 	Panagiotis Kanellopoulos, Alexandros A. Voudouris, and Rongsen Zhang <br />
 			<i> 31st International Joint Conference on Artificial Intelligence (IJCAI)</i>, pages 342-348, 2022 <br />
-			[ <a href="https://doi.org/10.24963/ijcai.2022/49" target=”_blank”>ijcai paper</a> | <a href="https://arxiv.org/abs/2109.04234" target=”_blank”>arxiv</a> ]
+			[ <a href="https://doi.org/10.24963/ijcai.2022/49" target="_blank" rel="noopener noreferrer">ijcai paper</a> | <a href="https://arxiv.org/abs/2109.04234" target="_blank" rel="noopener noreferrer">arxiv</a> ]
             	</td>
 		</tr>	
 		
@@ -859,7 +872,7 @@
                	<b> Fair division of indivisible goods: A survey </b> <br />
 		    Georgios Amanatidis, Georgios Birmpas, Aris Filos-Ratsikas, and Alexandros A. Voudouris <br />
                     <i> 31st International Joint Conference on Artificial Intelligence (IJCAI Survey Track)</i>, pages 5385-5393, 2022 <br />
-		    [ <a href="https://doi.org/10.24963/ijcai.2022/756" target=”_blank”>ijcai paper</a> | <a href="https://arxiv.org/abs/2202.07551" target=”_blank”>arxiv</a> ]
+		    [ <a href="https://doi.org/10.24963/ijcai.2022/756" target="_blank" rel="noopener noreferrer">ijcai paper</a> | <a href="https://arxiv.org/abs/2202.07551" target="_blank" rel="noopener noreferrer">arxiv</a> ]
             	</td>
 		</tr>
 		
@@ -871,7 +884,7 @@
                	<b> Optimizing mixed-asset portfolios involving REITs </b> <br />
 		    Fatim Habbab, Michael Kampouridis and Alexandros A. Voudouris <br />
 		    <i>  2022 IEEE Computational Intelligence for Financial Engineering and Economics (CIFEr)</i>, 2022 <br />
-		    [ <a href="https://doi.org/10.1109/CIFEr52523.2022.9776074" target=”_blank”>cifer paper</a> ]
+		    [ <a href="https://doi.org/10.1109/CIFEr52523.2022.9776074" target="_blank" rel="noopener noreferrer">cifer paper</a> ]
             	</td>
 	        </tr>
 		
@@ -883,7 +896,7 @@
                	<b> The metric distortion of multiwinner voting </b> <br />
 		    Ioannis Caragiannis, Nisarg Shah, and Alexandros A. Voudouris <br />
 		    <i>  36th AAAI Conference on Artificial Intelligence (AAAI)</i>, pages 4900-4907, 2022 <br />
-		    [ <a href="https://doi.org/10.1609/aaai.v36i5.20419" target=”_blank”>aaai paper</a> | <a href="https://arxiv.org/abs/2201.13332" target=”_blank”>arxiv</a> ]
+		    [ <a href="https://doi.org/10.1609/aaai.v36i5.20419" target="_blank" rel="noopener noreferrer">aaai paper</a> | <a href="https://arxiv.org/abs/2201.13332" target="_blank" rel="noopener noreferrer">arxiv</a> ]
             	</td>
 		</tr>
 		
@@ -895,7 +908,7 @@
                	<b> Heterogeneous facility location with limited resources </b> <br />
 		    Argyrios Deligkas, Aris Filos-Ratsikas, and Alexandros A. Voudouris <br />
 		    <i>  36th AAAI Conference on Artificial Intelligence (AAAI)</i>, pages 4966-4974, 2022 <br />
-		    [ <a href="https://doi.org/10.1609/aaai.v36i5.20427" target=”_blank”>aaai paper</a> | <a href="https://arxiv.org/abs/2105.02712" target=”_blank”>arxiv</a> ]
+		    [ <a href="https://doi.org/10.1609/aaai.v36i5.20427" target="_blank" rel="noopener noreferrer">aaai paper</a> | <a href="https://arxiv.org/abs/2105.02712" target="_blank" rel="noopener noreferrer">arxiv</a> ]
             	</td>
 		</tr>
 		
@@ -906,7 +919,7 @@
                	<td>
                	<b>  15th International Symposium on Algorithmic Game Theory (SAGT) </b> <br />
 		    Panagiotis Kanellopoulos, Maria Kyropoulou, and Alexandros A. Voudouris <br />
-		    [ <a href="https://link.springer.com/book/10.1007/978-3-031-15714-1" target=”_blank”>sagt 2022 proceedings</a> ]
+		    [ <a href="https://link.springer.com/book/10.1007/978-3-031-15714-1" target="_blank" rel="noopener noreferrer">sagt 2022 proceedings</a> ]
             	</td>
 		</tr>
 
@@ -926,7 +939,7 @@
                	<b> Distortion in social choice problems: An annotated reading list </b> <br />
 		 	Elliot Anshelevich, Aris Filos-Ratsikas, Nisarg Shah, and Alexandros A. Voudouris <br />
 			<i> SIGecom Exchanges</i>, volume 19(1), pages 12-14, 2021 <br />
-			[ <a href="https://doi.org/10.1145/3476436.3476439" target=”_blank”>sigecom paper</a> ]
+			[ <a href="https://doi.org/10.1145/3476436.3476439" target="_blank" rel="noopener noreferrer">sigecom paper</a> ]
             	</td>
 		</tr>
 
@@ -938,7 +951,7 @@
                	<b> Optimally deceiving a learning leader in Stackelberg games </b> <br />
 		 	Georgios Birmpas, Jiarui Gan, Alexandros Hollender, Francisco J. Marmolejo-Cossio, Ninad Rajgopal, and Alexandros A. Voudouris <br />
 			<i> Journal of Artificial Intelligence Research</i>, volume 72, pages 507-531, 2021 <br />
-			[ <a href="https://doi.org/10.1613/jair.1.12542" target=”_blank”>jair paper</a> ]
+			[ <a href="https://doi.org/10.1613/jair.1.12542" target="_blank" rel="noopener noreferrer">jair paper</a> ]
             	</td>
 	</tr>
 		
@@ -950,7 +963,7 @@
                	   <b> Schelling games on graphs </b> <br />
 		    Aishwarya Agarwal, Edith Elkind, Jiarui Gan, Ayumi Igarashi, Warut Suksompong, and Alexandros A. Voudouris <br />
 		    <i>Artificial Intelligence</i>, volume 301, article 103576, 2021 <br />
-                   [ <a href="https://doi.org/10.1016/j.artint.2021.103576" target=”_blank”>aij paper</a> ]
+                   [ <a href="https://doi.org/10.1016/j.artint.2021.103576" target="_blank" rel="noopener noreferrer">aij paper</a> ]
                 </td>
 	</tr>	
 	
@@ -962,7 +975,7 @@
                		<b> Modified Schelling games </b> <br />
 		 	Panagiotis Kanellopoulos, Maria Kyropoulou, and Alexandros A. Voudouris <br />
 			<i>Theoretical Computer Science</i>, volume 880, pages 1-19, 2021 <br />
-			[ <a href="https://doi.org/10.1016/j.tcs.2021.05.032" target=”_blank”>tcs paper</a> ]
+			[ <a href="https://doi.org/10.1016/j.tcs.2021.05.032" target="_blank" rel="noopener noreferrer">tcs paper</a> ]
             	</td>
 	</tr>
 		
@@ -974,7 +987,7 @@
                		<b> Welfare guarantees in Schelling segregation </b> <br />
 		 	Martin Bullinger, Warut Suksompong, and Alexandros A. Voudouris <br />
 			<i>Journal of Artificial Intelligence Research</i>, volume 71, pages 143-174, 2021 <br />
-			[ <a href="https://doi.org/10.1613/jair.1.12771" target=”_blank”>jair paper</a> ]
+			[ <a href="https://doi.org/10.1613/jair.1.12771" target="_blank" rel="noopener noreferrer">jair paper</a> ]
             	</td>
 	</tr>
 	
@@ -986,7 +999,7 @@
 				<b> Peeking behind the ordinal curtain: Improving distortion via cardinal queries </b> <br />
 		 		Georgios Amanatidis, Georgios Birmpas, Aris Filos-Ratsikas, and Alexandros A. Voudouris <br />
 				<i>Artificial Intelligence</i>, volume 296, article 103488, 2021 <br />
-                		[ <a href="https://doi.org/10.1016/j.artint.2021.103488" target=”_blank”>aij paper</a> ]
+                		[ <a href="https://doi.org/10.1016/j.artint.2021.103488" target="_blank" rel="noopener noreferrer">aij paper</a> ]
             </td>
         </tr>
 		
@@ -998,7 +1011,7 @@
 				<b> Maximum Nash welfare and other stories about EFX </b> <br />
 		 		Georgios Amanatidis, Georgios Birmpas, Aris Filos-Ratsikas, Alexandros Hollender, and Alexandros A. Voudouris <br />
 				<i>Theoretical Computer Science</i>, volume 863, pages 69-85, 2021 <br />
-                		[ <a href="https://doi.org/10.1016/j.tcs.2021.02.020" target=”_blank”>tcs paper</a> ]
+                		[ <a href="https://doi.org/10.1016/j.tcs.2021.02.020" target="_blank" rel="noopener noreferrer">tcs paper</a> ]
             </td>
         </tr>
 		
@@ -1010,7 +1023,7 @@
 				<b> The efficiency of resource allocation mechanisms for budget-constrained users </b> <br />
 				Ioannis Caragiannis and Alexandros A. Voudouris <br />
 				<i>Mathematics of Operations Research</i>, volume 46(2), pages 503-523, 2021 <br />
-                		[ <a href="https://doi.org/10.1287/moor.2020.1070" target=”_blank”>mor paper</a> ]
+                		[ <a href="https://doi.org/10.1287/moor.2020.1070" target="_blank" rel="noopener noreferrer">mor paper</a> ]
             </td>
         </tr>
 		
@@ -1022,7 +1035,7 @@
 				<b> Protecting elections by recounting ballots </b> <br />
 				Edith Elkind, Jiarui Gan, Svetlana Obraztsova, Zinovi Rabinovich, and Alexandros A. Voudouris <br />
 				<i>Artificial Intelligence</i>, volume 290, article 103401, 2021 <br />
-                		[ <a href="https://doi.org/10.1016/j.artint.2020.103401" target=”_blank”>aij paper</a> ]
+                		[ <a href="https://doi.org/10.1016/j.artint.2020.103401" target="_blank" rel="noopener noreferrer">aij paper</a> ]
             	</td>
         	</tr>
 		
@@ -1035,7 +1048,7 @@
                	<b> The distortion of distributed metric social choice </b> <br />
 		 	Elliot Anshelevich, Aris Filos-Ratsikas and Alexandros A. Voudouris <br />
 			<i>  17th Conference on Web and Internet Economics (WINE)</i>, 2021 <br />
-			[ <a href="https://doi.org/10.1007/978-3-030-94676-0_26" target=”_blank”>wine paper</a> | <a href="https://arxiv.org/abs/2107.05456" target=”_blank”>arxiv</a> ]
+			[ <a href="https://doi.org/10.1007/978-3-030-94676-0_26" target="_blank" rel="noopener noreferrer">wine paper</a> | <a href="https://arxiv.org/abs/2107.05456" target="_blank" rel="noopener noreferrer">arxiv</a> ]
             	</td>
 		</tr>
 		
@@ -1047,7 +1060,7 @@
                	<b> Approximate mechanism design for distributed facility location </b> <br />
 		 	Aris Filos-Ratsikas and Alexandros A. Voudouris <br />
 			<i> 14th International Symposium on Algorithmic Game Theory (SAGT)</i>, pages 49-63, 2021 <br />
-                        [ <a href="https://doi.org/10.1007/978-3-030-85947-3_4" target=”_blank”>sagt paper</a> | <a href="https://arxiv.org/abs/2007.06304" target=”_blank”>arxiv</a> ]
+                        [ <a href="https://doi.org/10.1007/978-3-030-85947-3_4" target="_blank" rel="noopener noreferrer">sagt paper</a> | <a href="https://arxiv.org/abs/2007.06304" target="_blank" rel="noopener noreferrer">arxiv</a> ]
             	</td>
 		</tr>
 		
@@ -1059,7 +1072,7 @@
                	<b> Distortion in social choice problems: The first 15 years and beyond </b> <br />
 		 	Elliot Anshelevich, Aris Filos-Ratsikas, Nisarg Shah, and Alexandros A. Voudouris <br />
 			<i> 30th International Joint Conference on Artificial Intelligence (IJCAI Survey Track)</i>, pages 4294-4301, 2021 <br />
-			[ <a href="https://doi.org/10.24963/ijcai.2021/589" target=”_blank”>ijcai paper</a> | <a href="https://arxiv.org/abs/2103.00911" target=”_blank”>arxiv</a> ]
+			[ <a href="https://doi.org/10.24963/ijcai.2021/589" target="_blank" rel="noopener noreferrer">ijcai paper</a> | <a href="https://arxiv.org/abs/2103.00911" target="_blank" rel="noopener noreferrer">arxiv</a> ]
             	</td>
 		</tr>
 		
@@ -1071,7 +1084,7 @@
                		<b> A few queries go a long way: Information-distortion tradeoffs in matching </b> <br />
 		 	Georgios Amanatidis, Georgios Birmpas, Aris Filos-Ratsikas, and Alexandros A. Voudouris <br />
 			<i>  35th AAAI Conference on Artificial Intelligence (AAAI)</i>, pages 5078-5085, 2021 <br />
-                        [ <a href="https://ojs.aaai.org/index.php/AAAI/article/view/16642" target=”_blank”>aaai paper</a> | <a href="https://arxiv.org/abs/2009.06543" target=”_blank”>arxiv</a> ]
+                        [ <a href="https://ojs.aaai.org/index.php/AAAI/article/view/16642" target="_blank" rel="noopener noreferrer">aaai paper</a> | <a href="https://arxiv.org/abs/2009.06543" target="_blank" rel="noopener noreferrer">arxiv</a> ]
             	</td>
 		</tr>
 		
@@ -1083,7 +1096,7 @@
                		<b> Welfare guarantees in Schelling segregation </b> <br />
 		 	Martin Bullinger, Warut Suksompong, and Alexandros A. Voudouris <br />
 			<i>  35th AAAI Conference on Artificial Intelligence (AAAI)</i>, pages 5236-5243, 2021 <br />
-			[ <a href="https://ojs.aaai.org/index.php/AAAI/article/view/16661" target=”_blank”>aaai paper</a> | <a href="https://arxiv.org/abs/2012.02086" target=”_blank”>arxiv</a> ]
+			[ <a href="https://ojs.aaai.org/index.php/AAAI/article/view/16661" target="_blank" rel="noopener noreferrer">aaai paper</a> | <a href="https://arxiv.org/abs/2012.02086" target="_blank" rel="noopener noreferrer">arxiv</a> ]
             	</td>
 		</tr>
 		
@@ -1101,7 +1114,7 @@
 			<b> Simple combinatorial auctions with budget constraints </b> <br />
 			Alexandros A. Voudouris <br />
 			<i> Theoretical Computer Science</i>, volume 842, pages 6-17, 2020 <br />
-			[ <a href="https://doi.org/10.1016/j.tcs.2020.07.019" target=”_blank”>tcs paper</a> | <a href="https://arxiv.org/abs/2007.14274" target=”_blank”>arxiv</a> ]
+			[ <a href="https://doi.org/10.1016/j.tcs.2020.07.019" target="_blank" rel="noopener noreferrer">tcs paper</a> | <a href="https://arxiv.org/abs/2007.14274" target="_blank" rel="noopener noreferrer">arxiv</a> ]
 		</td>
 	</tr>
 		
@@ -1113,7 +1126,7 @@
 			<b> Almost envy-freeness in group resource allocation </b> <br />
 			Maria Kyropoulou, Warut Suksompong, and Alexandros A. Voudouris <br />
 			<i> Theoretical Computer Science</i>, volume 841, pages 110-123, 2020 <br />
-			[ <a href="https://doi.org/10.1016/j.tcs.2020.07.008" target=”_blank”>tcs paper</a> ]
+			[ <a href="https://doi.org/10.1016/j.tcs.2020.07.008" target="_blank" rel="noopener noreferrer">tcs paper</a> ]
 		</td>
 	        </tr>
 		
@@ -1126,7 +1139,7 @@
 			Ioannis Caragiannis, George A. Krimpas, and Alexandros A. Voudouris <br />
 			<i>ACM Transactions on Economics and Computation</i>, volume 8, issue 3, article 16, 2020<br />
 		        Invited to special issue on selected papers from EC 2016 </br>
-                	[ <a href="https://doi.org/10.1145/3412347" target=”_blank”>teac paper</a> ]
+                	[ <a href="https://doi.org/10.1145/3412347" target="_blank" rel="noopener noreferrer">teac paper</a> ]
             </td>
             </tr>
 	
@@ -1138,7 +1151,7 @@
 				<b> The distortion of distributed voting </b> <br />
 				Aris Filos-Ratsikas, Evi Micha, and Alexandros A. Voudouris <br />
 				<i>Artificial Intelligence</i>, volume 286, article 103343, 2020 <br />
-                		[ <a href="https://doi.org/10.1016/j.artint.2020.103343" target=”_blank”>aij paper</a> ]
+                		[ <a href="https://doi.org/10.1016/j.artint.2020.103343" target="_blank" rel="noopener noreferrer">aij paper</a> ]
             </td>
             </tr>
 		
@@ -1151,7 +1164,7 @@
 				<b> Energy-aware tree network formation among computationally weak nodes </b> <br />
                 Adelina Madhja, Sotiris Nikoletseas and Alexandros A. Voudouris <br />
 				<i>Computer Networks</i>, volume 168, article 107068, 2020 <br />
-                [ <a href="https://doi.org/10.1016/j.comnet.2019.107068" target=”_blank”>comnet paper</a> ]
+                [ <a href="https://doi.org/10.1016/j.comnet.2019.107068" target="_blank" rel="noopener noreferrer">comnet paper</a> ]
             </td>
         </tr>
 		
@@ -1163,7 +1176,7 @@
                	<b> Optimally deceiving a learning leader in Stackelberg games </b> <br />
 		 	Georgios Birmpas, Jiarui Gan, Alexandros Hollender, Francisco J. Marmolejo-Cossio, Ninad Rajgopal, and Alexandros A. Voudouris <br />
 			<i>  34th Conference on Neural Information Processing Systems (NeurIPS)</i>, 2020 <br />
-			[ <a href="https://proceedings.neurips.cc/paper/2020/hash/ed383ec94720d62a939bfb6bdd98f50c-Abstract.html" target=”_blank”>neurips paper</a> | <a href="https://arxiv.org/abs/2006.06566" target=”_blank”>arxiv</a> ]
+			[ <a href="https://proceedings.neurips.cc/paper/2020/hash/ed383ec94720d62a939bfb6bdd98f50c-Abstract.html" target="_blank" rel="noopener noreferrer">neurips paper</a> | <a href="https://arxiv.org/abs/2006.06566" target="_blank" rel="noopener noreferrer">arxiv</a> ]
             	</td>
 		</tr>
 		
@@ -1176,7 +1189,7 @@
                	<b> Modified Schelling games </b> <br />
 		 	Panagiotis Kanellopoulos, Maria Kyropoulou, and Alexandros A. Voudouris <br />
 			<i>  13th International Symposium on Algorithmic Game Theory (SAGT)</i>, pages 241-256, 2020 <br />
-			[ <a href="https://doi.org/10.1007/978-3-030-57980-7_16" target=”_blank”>sagt paper</a> | <a href="https://arxiv.org/abs/2005.12149" target=”_blank”>arxiv</a> ]
+			[ <a href="https://doi.org/10.1007/978-3-030-57980-7_16" target="_blank" rel="noopener noreferrer">sagt paper</a> | <a href="https://arxiv.org/abs/2005.12149" target="_blank" rel="noopener noreferrer">arxiv</a> ]
             	</td>
 		</tr>
 		
@@ -1188,7 +1201,7 @@
                	<b> Maximum Nash welfare and other stories about EFX </b> <br />
 		 	Georgios Amanatidis, Georgios Birmpas, Aris Filos-Ratsikas, Alexandros Hollender, and Alexandros A. Voudouris <br />
 			<i>  29th International Joint Conference on Artificial Intelligence (IJCAI)</i>, pages 24-30, 2020 <br />
-			[ <a href="https://doi.org/10.24963/ijcai.2020/4" target=”_blank”>ijcai paper</a> | <a href="https://arxiv.org/abs/2001.09838" target=”_blank”>arxiv</a> ]
+			[ <a href="https://doi.org/10.24963/ijcai.2020/4" target="_blank" rel="noopener noreferrer">ijcai paper</a> | <a href="https://arxiv.org/abs/2001.09838" target="_blank" rel="noopener noreferrer">arxiv</a> ]
             </td>
 		</tr>
 		
@@ -1200,7 +1213,7 @@
                	<b> Swap stability in Schelling games on graphs </b> <br />
 				 Aishwarya Agarwal, Edith Elkind, Jiarui Gan, and Alexandros A. Voudouris <br />
 				 <i>  34th AAAI Conference on Artificial Intelligence (AAAI)</i>, pages 1758-1765, 2020 <br />
-                [ <a href="https://doi.org/10.1609/aaai.v34i02.5541" target=”_blank”>aaai paper</a> | <a href="https://arxiv.org/abs/1909.02421" target=”_blank”>arxiv</a> ]
+                [ <a href="https://doi.org/10.1609/aaai.v34i02.5541" target="_blank" rel="noopener noreferrer">aaai paper</a> | <a href="https://arxiv.org/abs/1909.02421" target="_blank" rel="noopener noreferrer">arxiv</a> ]
                 </td>
 		</tr>		
 			
@@ -1213,7 +1226,7 @@
                	<b> Peeking behind the ordinal curtain: Improving distortion via cardinal queries </b> <br />
 				 Georgios Amanatidis, Georgios Birmpas, Aris Filos-Ratsikas, and Alexandros A. Voudouris <br />
 				 <i>  34th AAAI Conference on Artificial Intelligence (AAAI)</i>, pages 1782-1789, 2020 <br />
-                [ <a href="https://doi.org/10.1609/aaai.v34i02.5544" target=”_blank”>aaai paper</a> | <a href="https://arxiv.org/abs/1907.08165" target=”_blank”>arxiv</a> ]
+                [ <a href="https://doi.org/10.1609/aaai.v34i02.5544" target="_blank" rel="noopener noreferrer">aaai paper</a> | <a href="https://arxiv.org/abs/1907.08165" target="_blank" rel="noopener noreferrer">arxiv</a> ]
             </td>
 		</tr>
 		   
@@ -1231,7 +1244,7 @@
                	<b> Envy-freeness in house allocation problems </b> <br />
 				 Jiarui Gan, Warut Suksompong, and Alexandros A. Voudouris <br />
 				 <i> Mathematical Social Sciences</i>, volume 101, pages 104-106, 2019<br />
-                [ <a href="https://doi.org/10.1016/j.mathsocsci.2019.07.005" target=”_blank”>mss paper</a> | <a href="https://arxiv.org/abs/1905.00468" target=”_blank”>arxiv</a> ]
+                [ <a href="https://doi.org/10.1016/j.mathsocsci.2019.07.005" target="_blank" rel="noopener noreferrer">mss paper</a> | <a href="https://arxiv.org/abs/1905.00468" target="_blank" rel="noopener noreferrer">arxiv</a> ]
             </td>
 		</tr>
 			
@@ -1243,7 +1256,7 @@
                	<b> Adaptive wireless power transfer in mobile ad hoc networks </b> <br />
 		 	    Adelina Madhja, Sotiris Nikoletseas, and Alexandros A. Voudouris <br />
                         <i>Computer Networks</i>, volume 152, pages 87-97, 2019<br />
-			    [ <a href="https://doi.org/10.1016/j.comnet.2019.02.004" target=”_blank”>comnet paper</a> ]
+			    [ <a href="https://doi.org/10.1016/j.comnet.2019.02.004" target="_blank" rel="noopener noreferrer">comnet paper</a> ]
                	</td>
 		</tr>
 			
@@ -1255,7 +1268,7 @@
                	<b> A note on the efficiency of position mechanisms with budget constraints </b> <br />
 		 	    Alexandros A. Voudouris <br />
 			    <i>Information Processing Letters</i>, volume 143, pages 28-33, 2019 <br />
-		     	[ <a href="https://doi.org/10.1016/j.ipl.2018.11.004" target=”_blank”>ipl paper </a> | <a href="https://arxiv.org/abs/1804.09649" target=”_blank”>arxiv</a> ]
+		     	[ <a href="https://doi.org/10.1016/j.ipl.2018.11.004" target="_blank" rel="noopener noreferrer">ipl paper </a> | <a href="https://arxiv.org/abs/1804.09649" target="_blank" rel="noopener noreferrer">arxiv</a> ]
            	</td>
 	    	</tr>
 
@@ -1269,7 +1282,7 @@
 				<b> Optimizing positional scoring rules for rank aggregation </b> <br />
                 Ioannis Caragiannis, Xenophon Chatzigeorgiou, George A. Krimpas, and Alexandros A. Voudouris <br />
 				<i>Artificial Intelligence</i>, volume 267, pages 58-77, 2019 <br />
-                [ <a href="https://doi.org/10.1016/j.artint.2018.11.001" target=”_blank”>aij paper</a> ]
+                [ <a href="https://doi.org/10.1016/j.artint.2018.11.001" target="_blank" rel="noopener noreferrer">aij paper</a> ]
             </td>
             </tr>
 			
@@ -1281,7 +1294,7 @@
                	<b> The distortion of distributed voting </b> <br />
 				 Aris Filos-Ratsikas, Evi Micha, and Alexandros A. Voudouris <br />
 				<i>  12th International Symposium on Algorithmic Game Theory (SAGT)</i>, pages 312-325, 2019 <br /> 
-                [ <a href="https://doi.org/10.1007/978-3-030-30473-7_21" target=”_blank”>sagt paper</a> | <a href="https://arxiv.org/abs/1905.01882" target=”_blank”>arxiv</a> ]
+                [ <a href="https://doi.org/10.1007/978-3-030-30473-7_21" target="_blank" rel="noopener noreferrer">sagt paper</a> | <a href="https://arxiv.org/abs/1905.01882" target="_blank" rel="noopener noreferrer">arxiv</a> ]
             </td>
 		</tr>
 			
@@ -1293,7 +1306,7 @@
 					<b> Protecting elections by recounting ballots </b> <br />
 					Edith Elkind, Jiarui Gan, Svetlana Obraztsova, Zinovi Rabinovich, and Alexandros A. Voudouris <br />
 					<i>  28th International Joint Conference on Artificial Intelligence (IJCAI)</i>, pages 259-265, 2019 <br />
-					[ <a href="https://www.ijcai.org/proceedings/2019/0037.pdf" target=”_blank”>ijcai paper</a> | <a href="https://arxiv.org/abs/1906.07071" target=”_blank”>arxiv</a> ]
+					[ <a href="https://www.ijcai.org/proceedings/2019/0037.pdf" target="_blank" rel="noopener noreferrer">ijcai paper</a> | <a href="https://arxiv.org/abs/1906.07071" target="_blank" rel="noopener noreferrer">arxiv</a> ]
 				</td>
 			</tr>
 			
@@ -1305,7 +1318,7 @@
 					<b> Schelling games on graphs </b> <br />
 					Edith Elkind, Jiarui Gan, Ayumi Igarashi, Warut Suksompong, and Alexandros A. Voudouris <br />
 					<i>  28th International Joint Conference on Artificial Intelligence (IJCAI)</i>, pages 266-272, 2019 <br />
-					[ <a href="https://www.ijcai.org/proceedings/2019/0038.pdf" target=”_blank”>ijcai paper</a> | <a href="https://arxiv.org/abs/1902.07937" target=”_blank”>arxiv</a> ]
+					[ <a href="https://www.ijcai.org/proceedings/2019/0038.pdf" target="_blank" rel="noopener noreferrer">ijcai paper</a> | <a href="https://arxiv.org/abs/1902.07937" target="_blank" rel="noopener noreferrer">arxiv</a> ]
 				</td>
 			</tr>
 		
@@ -1317,7 +1330,7 @@
 					<b> Almost envy-freeness in group resource allocation </b> <br />
 					Maria Kyropoulou, Warut Suksompong, and Alexandros A. Voudouris <br />
 					<i>  28th International Joint Conference on Artificial Intelligence (IJCAI)</i>, pages 400-406, 2019 <br />
-					[ <a href="https://www.ijcai.org/proceedings/2019/0057.pdf" target=”_blank”>ijcai paper</a> | <a href="https://arxiv.org/abs/1901.08463" target=”_blank”>arxiv</a> ]
+					[ <a href="https://www.ijcai.org/proceedings/2019/0057.pdf" target="_blank" rel="noopener noreferrer">ijcai paper</a> | <a href="https://arxiv.org/abs/1901.08463" target="_blank" rel="noopener noreferrer">arxiv</a> ]
 				</td>
 			</tr>
                         
@@ -1337,7 +1350,7 @@
                   <b>Near-optimal asymmetric binary matrix partitions</b> <br /> 
 		  Fidaa Abed, Ioannis Caragiannis, and Alexandros A. Voudouris  <br /> 
 		  <i>Algorithmica</i>, volume 80(1), pages 48-72, 2018  <br /> 
-                [ <a href="http://link.springer.com/article/10.1007/s00453-016-0238-4" target=”_blank”>algo paper</a> ]
+                [ <a href="http://link.springer.com/article/10.1007/s00453-016-0238-4" target="_blank" rel="noopener noreferrer">algo paper</a> ]
                </td>
             </tr>
 
@@ -1349,7 +1362,7 @@
                	<b> Peer-to-peer energy-aware tree network formation </b> <br />
 		Adelina Madhja, Sotiris Nikoletseas, Dimitrios Tsolovos, and Alexandros A. Voudouris 			<br />
 		<i>  16th ACM International Symposium on Mobility Management and Wireless Access (MOBIWAC)</i>, pages 1-8, 2018 <br />
-		[ <a href="https://dl.acm.org/citation.cfm?id=3265875" target=”_blank”>mobiwac paper<a> | <a href="http://arxiv.org/abs/1805.08755" target=”_blank”>arxiv</a> ]
+		[ <a href="https://dl.acm.org/citation.cfm?id=3265875" target="_blank" rel="noopener noreferrer">mobiwac paper<a> | <a href="http://arxiv.org/abs/1805.08755" target="_blank" rel="noopener noreferrer">arxiv</a> ]
                	</td>
 	    </tr>
 
@@ -1361,7 +1374,7 @@
                	<b> Mobility-aware, adaptive algorithms for wireless power transfer in ad hoc networks </b> <br />
 		 	Adelina Madhja, Sotiris Nikoletseas, and Alexandros A. Voudouris <br />
                         <i>  14th International Symposium on Algorithms and Experiments for Wireless Sensor Networks (ALGOSENSORS)</i>, pages 145-158, 2018 <br />
-		        [ <a href="https://doi.org/10.1007/978-3-030-14094-6_10" target=”_blank”>algosensors paper</a> | <a href="https://arxiv.org/abs/1802.00342" target=”_blank”>arxiv</a> ]
+		        [ <a href="https://doi.org/10.1007/978-3-030-14094-6_10" target="_blank" rel="noopener noreferrer">algosensors paper</a> | <a href="https://arxiv.org/abs/1802.00342" target="_blank" rel="noopener noreferrer">arxiv</a> ]
                	</td>
 	    </tr>
 			
@@ -1373,7 +1386,7 @@
                	<b> Adaptive wireless power transfer in mobile ad hoc networks </b> <br />
 		 	Adelina Madhja, Sotiris Nikoletseas, and Alexandros A. Voudouris <br />
                         <i>  14th International Conference on Distributed Computing in Sensor Systems (DCOSS)</i>, pages 121-122, 2018 <br />
-			[ <a href="https://ieeexplore.ieee.org/document/8510972" target=”_blank”>dcoss paper</a> ]
+			[ <a href="https://ieeexplore.ieee.org/document/8510972" target="_blank" rel="noopener noreferrer">dcoss paper</a> ]
                	</td>
 	    </tr>
         
@@ -1385,7 +1398,7 @@
                	<b> The efficiency of resource allocation mechanisms for budget-constrained users </b> <br />
 		    Ioannis Caragiannis and Alexandros A. Voudouris <br />
                     <i> 19th ACM Conference on Economics and Computation (EC)</i>, pages 681-698, 2018<br />  
-			[ <a href="https://dl.acm.org/citation.cfm?doid=3219166.3219186" target=”_blank”> ec paper</a> | <a href="https://arxiv.org/abs/1707.03551" target=”_blank”>arxiv</a> ] 
+			[ <a href="https://dl.acm.org/citation.cfm?doid=3219166.3219186" target="_blank" rel="noopener noreferrer"> ec paper</a> | <a href="https://arxiv.org/abs/1707.03551" target="_blank" rel="noopener noreferrer">arxiv</a> ] 
                	</td>
 	    </tr>
 
@@ -1397,7 +1410,7 @@
                	<b> Design and analysis of algorithms for non-cooperative environments</b> <br />
 		    Alexandros A. Voudouris <br /> 
 	            PhD thesis, Department of Computer Engineering and Informatics, University of Patras, Greece, 2018 <br /> 
-		    [ <a href="phd.thesis.voudouris.pdf" target=”_blank”>pdf</a> | slides (<a href="phd.slides.voudouris.pdf" target=”_blank”>gr</a>|<a href="phd.slides.voudouris.en.pdf" target=”_blank”>en</a>) ] </li>
+		    [ <a href="phd.thesis.voudouris.pdf" target="_blank" rel="noopener noreferrer">pdf</a> | slides (<a href="phd.slides.voudouris.pdf" target="_blank" rel="noopener noreferrer">gr</a>|<a href="phd.slides.voudouris.en.pdf" target="_blank" rel="noopener noreferrer">en</a>) ] </li>
                	</td>
 	    </tr> 
 
@@ -1417,7 +1430,7 @@
                 <b> Efficiency and complexity of price competition among single-product vendors </b> <br />
 				Ioannis Caragiannis, Xenophon Chatzigeorgiou, Panagiotis Kanellopoulos, George A. Krimpas, Nikos Protopapas, and Alexandros A. Voudouris <br />
 				<i>Artificial Intelligence</i>, volume 248, pages 9-25, 2017
-				<br /> [ <a href="http://dx.doi.org/10.1016/j.artint.2017.03.001" target=”_blank”>aij paper</a> ]
+				<br /> [ <a href="http://dx.doi.org/10.1016/j.artint.2017.03.001" target="_blank" rel="noopener noreferrer">aij paper</a> ]
                	</td>
 		</tr>
 		<tr>
@@ -1428,7 +1441,7 @@
                	<b> Bounding the inefficiency of compromise</b> <br />
 				Ioannis Caragiannis, Panagiotis Kanellopoulos, and Alexandros A. Voudouris <br />
 				<i> 26th International Joint Conference on Artificial Intelligence (IJCAI)</i>, pages 142-148, 2017<br />
-				[ <a href="https://www.ijcai.org/proceedings/2017/0021.pdf" target=”_blank”>ijcai paper</a> | <a href="https://arxiv.org/abs/1702.07309" target=”_blank”>arxiv</a> ]
+				[ <a href="https://www.ijcai.org/proceedings/2017/0021.pdf" target="_blank" rel="noopener noreferrer">ijcai paper</a> | <a href="https://arxiv.org/abs/1702.07309" target="_blank" rel="noopener noreferrer">arxiv</a> ]
                	</td>
 
 		
@@ -1440,7 +1453,7 @@
 				<b> Optimizing positional scoring rules for rank aggregation </b> <br />
                 Ioannis Caragiannis, Xenophon Chatzigeorgiou, George A. Krimpas, and Alexandros A. Voudouris <br />
 				<i> 31st AAAI Conference on Artificial Intelligence (AAAI)</i>, pages 430-436, 2017 <br />
-                [ <a href="http://aaai.org/ocs/index.php/AAAI/AAAI17/paper/view/14621/13794" target=”_blank”>aaai paper</a> | <a href="https://arxiv.org/abs/1609.07460" target=”_blank”>arxiv</a> ]
+                [ <a href="http://aaai.org/ocs/index.php/AAAI/AAAI17/paper/view/14621/13794" target="_blank" rel="noopener noreferrer">aaai paper</a> | <a href="https://arxiv.org/abs/1609.07460" target="_blank" rel="noopener noreferrer">arxiv</a> ]
             </td>
             </tr>
                         
@@ -1460,7 +1473,7 @@
 		Ioannis Caragiannis and Alexandros A. Voudouris <br />
 		<i>Theory of Computing Systems</i>, volume 59(4), pages 581-599, 2016 <br />
 		Invited to special issue on selected papers from SAGT 2014/2015 <br />
-                [ <a href="http://link.springer.com/article/10.1007/s00224-016-9674-4" target=”_blank”>tocs paper</a> ]
+                [ <a href="http://link.springer.com/article/10.1007/s00224-016-9674-4" target="_blank" rel="noopener noreferrer">tocs paper</a> ]
                </td>
             </tr>
             
@@ -1474,7 +1487,7 @@
 		Ioannis Caragiannis, George A. Krimpas, and Alexandros A. Voudouris <br />
 		<i> 17th ACM Conference on Economics and Computation (EC)</i>, pages 323-340, 2016 <br /> 
                 Also presented as poster at <i> WINE 2016 </i> and as extended abstract at <i>COMSOC 2016</i><br />
-		[ <a href="http://dl.acm.org/ft_gateway.cfm?id=2940748&ftid=1765962&dwn=1&CFID=650770622&CFTOKEN=96664851" target=”_blank”>ec paper</a> | <a href="http://arxiv.org/abs/1602.07985" target=”_blank”>arxiv</a> ]
+		[ <a href="http://dl.acm.org/ft_gateway.cfm?id=2940748&ftid=1765962&dwn=1&CFID=650770622&CFTOKEN=96664851" target="_blank" rel="noopener noreferrer">ec paper</a> | <a href="http://arxiv.org/abs/1602.07985" target="_blank" rel="noopener noreferrer">arxiv</a> ]
                 </td>
             </tr>
             
@@ -1486,7 +1499,7 @@
                <b>co-rank: an online tool for collectively deciding efficient rankings among peers</b> <br />
 		Ioannis Caragiannis, George A. Krimpas, Marianna Panteli, and Alexandros A. Voudouris <br />
 		<i>  30th AAAI Conference on Artificial Intelligence (AAAI)</i>, pages 4351-4352, 2016 <br /> 
-		[ <a href="http://co-rank.ceid.upatras.gr" target=”_blank”>co-rank</a> | <a href="http://www.aaai.org/ocs/index.php/AAAI/AAAI16/paper/view/12043" target=”_blank”>aaai paper</a> ]
+		[ <a href="http://co-rank.ceid.upatras.gr" target="_blank" rel="noopener noreferrer">co-rank</a> | <a href="http://www.aaai.org/ocs/index.php/AAAI/AAAI16/paper/view/12043" target="_blank" rel="noopener noreferrer">aaai paper</a> ]
                 </td>
             </tr> 
             
@@ -1504,7 +1517,7 @@
                <b> Near-optimal asymmetric binary matrix partitions</b> <br /> 
  		Fidaa Abed, Ioannis Caragiannis, and Alexandros A. Voudouris <br /> 
 	       <i>  40th International Symposium on Mathematical Foundations of Computer Science (MFCS)</i>, pages 1-13, 2015  <br /> 
-		[ <a href="http://link.springer.com/chapter/10.1007/978-3-662-48054-0_1" target=”_blank”>mfcs paper</a> | <a href="http://arxiv.org/abs/1407.8170" target=”_blank”>arxiv</a> ] 
+		[ <a href="http://link.springer.com/chapter/10.1007/978-3-662-48054-0_1" target="_blank" rel="noopener noreferrer">mfcs paper</a> | <a href="http://arxiv.org/abs/1407.8170" target="_blank" rel="noopener noreferrer">arxiv</a> ] 
                </td>
             </tr>
             <tr>
@@ -1515,7 +1528,7 @@
                <b>Efficiency and complexity of price competition among single-product vendors</b> <br />
 		Ioannis Caragiannis, Xenophon Chatzigeorgiou, Panagiotis Kanellopoulos, George A. Krimpas, Nikos Protopapas, and Alexandros A. Voudouris <br />
  		<i>  24th International Joint Conference on Artificial Intelligence (IJCAI)</i>, pages 25-31, 2015 <br /> 
-		[ <a href="http://ijcai.org/papers15/Papers/IJCAI15-011.pdf" target=”_blank”>ijcai paper</a> | <a href="http://arxiv.org/abs/1502.03945" target=”_blank”>arxiv</a> ] 
+		[ <a href="http://ijcai.org/papers15/Papers/IJCAI15-011.pdf" target="_blank" rel="noopener noreferrer">ijcai paper</a> | <a href="http://arxiv.org/abs/1502.03945" target="_blank" rel="noopener noreferrer">arxiv</a> ] 
                </td>
             </tr>
             <tr>
@@ -1526,7 +1539,7 @@
                <b>Aggregating partial rankings with applications to peer grading in massive online open courses</b> <br /> 
 		Ioannis Caragiannis, George A. Krimpas, and Alexandros A. Voudouris. <br />
 		<i> 14th International Conference on Autonomous Agents and Multi-Agent Systems (AAMAS)</i>, pages 675-683, 2015 <br /> 
-		[ <a href="https://dl.acm.org/citation.cfm?id=2772879.2773241" target=”_blank”>aamas paper</a> | <a href="http://arxiv.org/abs/1411.4619" target=”_blank”>arxiv</a> ]  
+		[ <a href="https://dl.acm.org/citation.cfm?id=2772879.2773241" target="_blank" rel="noopener noreferrer">aamas paper</a> | <a href="http://arxiv.org/abs/1411.4619" target="_blank" rel="noopener noreferrer">arxiv</a> ]  
                </td>
             </tr>
 	</table>
@@ -1545,7 +1558,7 @@
                <b> Welfare guarantees for proportional allocations </b> <br />
 		Ioannis Caragiannis and Alexandros A. Voudouris <br /> 
 		<i> 7th International Symposium on Algorithmic Game Theory (SAGT)</i>, pages 206-217, 2014 <br /> 
-		[ <a href="http://link.springer.com/chapter/10.1007/978-3-662-44803-8_18" target=”_blank”>sagt paper</a> | <a href="http://arxiv.org/abs/1402.3447" target=”_blank”>arxiv</a> ]
+		[ <a href="http://link.springer.com/chapter/10.1007/978-3-662-44803-8_18" target="_blank" rel="noopener noreferrer">sagt paper</a> | <a href="http://arxiv.org/abs/1402.3447" target="_blank" rel="noopener noreferrer">arxiv</a> ]
                </td>
             </tr>
             <tr>
@@ -1556,7 +1569,7 @@
                <b>On the efficiency of divisible resource allocation mechanisms</b> <br />
 		Alexandros A. Voudouris <br />
  		M.Sc. thesis, Department of Computer Engineering and Informatics, University of Patras, Greece, 2014 <br /> 
-		[ <a href="http://nemertes.lis.upatras.gr/jspui/handle/10889/8413" target=”_blank”>pdf</a> (in greek) ]
+		[ <a href="http://nemertes.lis.upatras.gr/jspui/handle/10889/8413" target="_blank" rel="noopener noreferrer">pdf</a> (in greek) ]
                </td>
             </tr>
             </table>
@@ -1572,7 +1585,7 @@
                <b>Search algorithms for natural deduction proofs </b> <br />
  		Alexandros A. Voudouris <br />
 		 Diploma thesis, Department of Computer Engineering and Informatics, University of Patras, Greece, 2013 <br /> 
-		[ <a href="diploma_4417.pdf" target=”_blank”>pdf</a> (in greek) | <a href="BFPS.jar">code</a> ] </li>
+		[ <a href="diploma_4417.pdf" target="_blank" rel="noopener noreferrer">pdf</a> (in greek) | <a href="https://www.alexvoudouris.com/BFPS.jar">code</a> ] </li>
             </td>
             </tr>
             </table>
@@ -1587,6 +1600,15 @@
 </div>
 </div>
 </div>
+
+
+    <button class="ghost-trigger" id="ghost-trigger" type="button" aria-label="A message from the resident ghost" aria-controls="ghost-note" aria-expanded="false" data-needs-js>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M7 26V13a9 9 0 0 1 18 0v13l-4-3-5 4-5-4-4 3Z" fill="currentColor" opacity=".9"/><ellipse cx="12.5" cy="13.5" rx="1.4" ry="2" fill="#251c2b"/><ellipse cx="19.5" cy="13.5" rx="1.4" ry="2" fill="#251c2b"/><path d="M14 20q2-3 4 0" stroke="#251c2b" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <div class="ghost-note" id="ghost-note" hidden>
+      <span role="status" aria-live="polite">Still waiting for Reviewer 2.</span>
+      <button class="ghost-close" id="ghost-close" type="button" aria-label="Dismiss ghost message">×</button>
+    </div>
 
 </body> 
 </html>
