@@ -1,7 +1,7 @@
 /* Edit these settings to choose the site's default appearance. */
 window.SITE_THEME = {
   defaultTheme: 'halloween',   // 'classic', 'halloween', or 'christmas'
-  allowThemeSwitch: true,     // false hides the selector and forces the default
+  allowThemeSwitch: false,     // false hides the selector and forces the default
   storageKey: 'alexvoudouris-classic-preview-theme',
   rememberTheme: false        // false ignores saved choices
 };
