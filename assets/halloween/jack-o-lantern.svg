@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 202" role="img" aria-labelledby="title">
+  <title id="title">A glowing, gently rocking jack-o'-lantern</title>
+  <defs>
+    <radialGradient id="ground"><stop stop-color="#ed903a" stop-opacity=".3"/><stop offset="1" stop-color="#ed903a" stop-opacity="0"/></radialGradient>
+    <radialGradient id="skin" cx="40%" cy="25%" r="80%"><stop stop-color="#ffbc58"/><stop offset=".4" stop-color="#eb7d25"/><stop offset="1" stop-color="#9b361d"/></radialGradient>
+    <linearGradient id="rib" x2="1" y2=".8"><stop stop-color="#ffc16b" stop-opacity=".6"/><stop offset=".6" stop-color="#d96320" stop-opacity=".1"/><stop offset="1" stop-color="#8e2f20" stop-opacity=".5"/></linearGradient>
+    <radialGradient id="light" cx="50%" cy="65%"><stop stop-color="#fff4b0"/><stop offset=".65" stop-color="#ffd25e"/><stop offset="1" stop-color="#fda03b"/></radialGradient>
+    <linearGradient id="stem" x1="0" y1="1" x2=".7" y2="0"><stop stop-color="#57452b"/><stop offset=".7" stop-color="#8d7848"/><stop offset="1" stop-color="#b7a16c"/></linearGradient>
+    <linearGradient id="leaf" x2="1" y2="1"><stop stop-color="#98a35b"/><stop offset="1" stop-color="#47552f"/></linearGradient>
+  </defs>
+  <style>
+    .lantern { transform-origin: 90px 163px; animation: lantern-sway 5.6s ease-in-out infinite; }
+    .candle { animation: candle-flicker 4.8s ease-in-out infinite; }
+    .eyes { transform-box: fill-box; transform-origin: center; animation: lantern-blink 11s infinite; }
+    .floor-glow { transform-origin: 90px 183px; animation: floor-breathe 5.6s ease-in-out infinite; }
+    .ember { opacity: 0; animation: ember-rise 5s ease-out infinite; }
+    .ember-two { animation-delay: 1.7s; }
+    .ember-three { animation-delay: 3.3s; }
+    @keyframes lantern-sway { 0%,100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-5px) rotate(2deg); } }
+    @keyframes candle-flicker { 0%,100% { opacity: .95; } 19% { opacity: .72; } 32% { opacity: 1; } 46% { opacity: .83; } 67% { opacity: 1; } 81% { opacity: .78; } }
+    @keyframes lantern-blink { 0%,41%,44%,100% { transform: scaleY(1); } 42.5% { transform: scaleY(.12); } }
+    @keyframes floor-breathe { 0%,100% { opacity: .65; transform: scaleX(1); } 50% { opacity: .9; transform: scaleX(.9); } }
+    @keyframes ember-rise { 0% { opacity: 0; transform: translate(0,0); } 20% { opacity: .65; } 100% { opacity: 0; transform: translate(7px,-34px); } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+  <ellipse class="floor-glow" cx="90" cy="183" rx="83" ry="17" fill="url(#ground)"/>
+  <ellipse cx="90" cy="182" rx="49" ry="6" fill="#08070c" opacity=".5"/>
+  <g class="lantern">
+    <path d="M81 66c-3-18 0-34 14-43l13 7C96 39 92 50 96 66Z" fill="url(#stem)" stroke="#49382b" stroke-width="2"/>
+    <path d="M87 58c-1-14 3-24 11-30" fill="none" stroke="#c7ae72" stroke-opacity=".45" stroke-width="2" stroke-linecap="round"/>
+    <path d="M93 49c6-19 26-24 43-17-4 18-23 27-43 17Z" fill="url(#leaf)" stroke="#516037" stroke-width="1.5"/>
+    <path d="m96 48 30-12m-19 9 1-7m8 4 6 3" fill="none" stroke="#bec384" stroke-opacity=".7" stroke-width="1.3" stroke-linecap="round"/>
+    <path d="M97 58c15-11 24-5 20 2-4 7-12 1-5-3" fill="none" stroke="#859256" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M90 64C68 49 40 57 26 79c-16 26-13 66 7 85 15 14 34 16 57 11 23 5 42 3 57-11 20-19 23-59 7-85-14-22-42-30-64-15Z" fill="url(#skin)" stroke="#9c421f" stroke-width="2"/>
+    <path d="M64 62C36 80 35 148 61 173M89 65c-16 23-17 81-5 110m11-110c17 23 18 81 6 110m16-113c28 18 29 86 3 111" fill="none" stroke="url(#rib)" stroke-width="5" stroke-linecap="round"/>
+    <path d="M45 78c-7 5-11 14-13 22m10-1-3 9" fill="none" stroke="#ffd18a" stroke-opacity=".65" stroke-width="3.5" stroke-linecap="round"/>
+    <path d="m48 104 27-14-2 25Zm59 11-2-25 27 14ZM42 130q17 35 48 35t48-35l-17 7-5-8-10 13-15-3-13 4-13-14-7 9Z" fill="#71301e" stroke="#7a301b" stroke-width="3" stroke-linejoin="round"/>
+    <g class="candle" fill="url(#light)">
+      <g class="eyes"><path d="m49 103 24-11-2 20Zm60 9-2-20 24 11Z"/></g>
+      <path d="M45 132q17 30 45 30t45-30l-14 8-6-8-8 13-16-3-14 4-12-14-7 9Z"/>
+      <path d="m85 122 5-9 5 9Z"/>
+    </g>
+    <path d="M51 153c11 17 28 22 40 20m14-1c11-1 23-6 30-15" fill="none" stroke="#f8a24c" stroke-opacity=".45" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  <g fill="#ffd58b"><circle class="ember" cx="31" cy="122" r="1.6"/><circle class="ember ember-two" cx="150" cy="94" r="1.2"/><circle class="ember ember-three" cx="23" cy="159" r="1.2"/></g>
+</svg>
