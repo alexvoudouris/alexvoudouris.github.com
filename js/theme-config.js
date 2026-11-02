@@ -11,7 +11,7 @@ window.SITE_THEME = {
   var root = document.documentElement;
   var config = window.SITE_THEME;
   var allowed = ['classic', 'halloween', 'christmas'];
-  var theme = allowed.indexOf(config.defaultTheme) >= 0 ? config.defaultTheme : 'halloween';
+  var theme = allowed.indexOf(config.defaultTheme) >= 0 ? config.defaultTheme : 'classic';
   root.classList.add('js-enabled');
   root.dataset.themeSwitch = config.allowThemeSwitch ? 'enabled' : 'disabled';
   if (config.allowThemeSwitch && config.rememberTheme) {
