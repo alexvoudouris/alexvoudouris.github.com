@@ -46,7 +46,7 @@
     document.title = title.dataset.baseTitle + (look.name ? ' · ' + look.name : '');
     favicon.setAttribute('href', look.icon);
     tagline.textContent = look.tagline;
-    caption.textContent = look.name;
+    if (caption) caption.textContent = look.name;
     message.textContent = look.message;
     surprise.setAttribute('aria-label', look.label);
     surprise.hidden = theme === 'classic';
